@@ -53,7 +53,7 @@ class _MenuPagina extends State<MenuPagina> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text("One Hand"),
+        title: new Text("One Hand 7"),
         backgroundColor: Colors.orangeAccent,
       ),
       drawer: new Drawer(
