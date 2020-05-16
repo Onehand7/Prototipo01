@@ -74,10 +74,10 @@ class _MenuPagina extends State<MenuPagina> {
               
             ),
             new ListTile(
-              title: new Text("Historial"),
+              title: new Text("jfsdfosdof"),
             ),
             new ListTile(
-              title: new Text("Carrito"),
+              title: new Text("sdfsdf"),
             ),
             new ListTile(
               title: new Text("Configuración"),
