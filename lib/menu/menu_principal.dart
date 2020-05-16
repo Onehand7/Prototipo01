@@ -59,6 +59,7 @@ class _MenuPagina extends State<MenuPagina> {
       drawer: new Drawer(
         child: new ListView(
           children: <Widget>[
+            
             new UserAccountsDrawerHeader(
               accountEmail: new Text("mtapiar5@alumnos.ceduc.cl"),
               accountName: new Text("Matias Tapia"),
@@ -66,8 +67,26 @@ class _MenuPagina extends State<MenuPagina> {
                   child: new CircleAvatar(
                     backgroundImage: new AssetImage(currentProfilePic),
                   ),
-            )
-            )],
+              )
+            ),
+            new ListTile(
+              title: new Text("pepito"),
+              
+            ),
+            new ListTile(
+              title: new Text("Historial"),
+            ),
+            new ListTile(
+              title: new Text("Carrito"),
+            ),
+            new ListTile(
+              title: new Text("Configuración"),
+            ),
+            new ListTile(
+              title: new Text("Salir"),
+            ),
+            ],
+
         )
       ),
       body: ListView.builder(
