@@ -8,9 +8,18 @@ class PerfilPage extends StatefulWidget {
 class _PerfilPage extends State<PerfilPage> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text("Perfil",style: TextStyle(fontSize: 40.0),),
+    return Container(
+      decoration: BoxDecoration(color: Colors.white),
+      child: Center(
+        child: Text(
+          'Hello World',
+          textDirection: TextDirection.ltr,
+          style: TextStyle(
+            fontSize: 32,
+            color: Colors.black87,
+          ),
+        ),
+      ),
     );
   }
-
 }
