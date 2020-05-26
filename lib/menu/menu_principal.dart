@@ -126,7 +126,8 @@ class _MenuPagina extends State<MenuPagina>
           ),
         ],
       )),
-      body:_children[_currentIndex], //_getDrawerItemWidget(_selectDrawerItem),
+      body://_children[_currentIndex], 
+      _getDrawerItemWidget(_selectDrawerItem),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: onTabTapped,
