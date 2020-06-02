@@ -84,7 +84,7 @@ class _MenuPagina extends State<MenuPagina>
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text("One Hand 7"),
+        title: new Text("One Hand "),
         backgroundColor: Colors.orangeAccent,
       ),
       drawer: new Drawer(
@@ -126,7 +126,8 @@ class _MenuPagina extends State<MenuPagina>
           ),
         ],
       )),
-      body://_children[_currentIndex], 
+      // descomentar _get para usar barra lateral, descomentar _children para barra inferior
+     body://_children[_currentIndex], 
       _getDrawerItemWidget(_selectDrawerItem),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
