@@ -9,8 +9,9 @@ class PerfilPage extends StatefulWidget {
 class _PerfilPage extends State<PerfilPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: CustomAppBar(),
+    return Container(
+      child: CustomAppBar(),
+      
     );
   }
 

@@ -26,7 +26,8 @@ class _MenuPagina extends State<MenuPagina>
   Map data; /////////////////////////////
   List cuentasData;
 
-  //Variables
+  //VARIABLES
+
   int _currentIndex = 0;
   int _selectDrawerItem = 0;
   String currentProfilePic = "assets/onehand.png";
@@ -82,6 +83,7 @@ class _MenuPagina extends State<MenuPagina>
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return new Scaffold(
       appBar: new AppBar(
         title: new Text("One Hand "),
@@ -126,9 +128,65 @@ class _MenuPagina extends State<MenuPagina>
           ),
         ],
       )),
+      body: Stack(
+        children: <Widget>[
+          Container(
+            height: size.height * .123,
+            decoration: BoxDecoration(
+              color: Colors.orange[200],
+            ),
+          ),
+          SafeArea(
+              child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Align(
+                  alignment: Alignment.topRight,
+                  child: Container(
+                    alignment: Alignment.center,
+                    height: 52,
+                    width: 52,
+                    decoration: BoxDecoration(
+                      color: Colors.amberAccent,
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(Icons.menu),
+                  ),
+                ),
+                Text(
+                  "OnaHand es tu nuevo Dios",
+                  style: Theme.of(context)
+                      .textTheme
+                      .display1
+                      .copyWith(fontWeight: FontWeight.w900),
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 30),
+                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(26.5)),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: "Buscar",
+                      icon: Icon(Icons.search),
+                      border: InputBorder.none,
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ))
+        ],
+      ),
+
       // descomentar _get para usar barra lateral, descomentar _children para barra inferior
-     body://_children[_currentIndex], 
-      _getDrawerItemWidget(_selectDrawerItem),
+      //_children[_currentIndex],
+      //_getDrawerItemWidget(_selectDrawerItem),
+
+      //pestañas de abajo del dispositivo
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: onTabTapped,
@@ -147,6 +205,7 @@ class _MenuPagina extends State<MenuPagina>
     );
   }
 
+  // metodo para las pestañas de abajo del dispositivo
   void onTabTapped(int index) {
     setState(() {
       _currentIndex = index;
