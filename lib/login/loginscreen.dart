@@ -15,7 +15,8 @@ class LoginScreen extends StatefulWidget {
   _LoginScreen createState() => new _LoginScreen();
 }
 
-class _LoginScreen extends State<LoginScreen> with SingleTickerProviderStateMixin {
+class _LoginScreen extends State<LoginScreen>
+    with SingleTickerProviderStateMixin {
   AnimationController controller;
   Animation<double> animation;
 
@@ -51,7 +52,6 @@ class _LoginScreen extends State<LoginScreen> with SingleTickerProviderStateMixi
     super.dispose();
   }
 
-
   /////////////////////////////////////////////////////////
   // getUsuarios() async {
   //   http.Response respuesta =  await http.get(Uri.encodeFull("http://localhost:120/api/cliente"));
@@ -71,17 +71,29 @@ class _LoginScreen extends State<LoginScreen> with SingleTickerProviderStateMixi
   }
 
   Widget loginForm() {
+    //Size size= MediaQuery.of(context).size;
     return Container(
-      decoration: new BoxDecoration(
-          image: DecorationImage(
-        image: AssetImage('assets/imageFondo.jpeg'),fit: BoxFit.cover,
-      )),
+      decoration: BoxDecoration(
+          gradient: LinearGradient(
+              colors: [Colors.orange[100], Colors.deepOrange[50]])),
+      // Es el Fondo de pantalla
+      // decoration: new BoxDecoration(
+      //     image: DecorationImage(
+      //   image: AssetImage('assets/imageFondo.jpeg'),fit: BoxFit.cover,
+      // )),
       child: Column(
+        //Centra el contenido de Column
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-           SizedBox(
-            height: 0.0,
+          Text(
+            "LOGIN",
+            style: TextStyle(fontWeight: FontWeight.bold),
           ),
+          //  SizedBox(
+          //   height: 0.0,
+          // ),
+
+          //Imagen del icomo de login
           Flexible(
             flex: 2,
             child: SafeArea(
@@ -97,72 +109,104 @@ class _LoginScreen extends State<LoginScreen> with SingleTickerProviderStateMixi
               key: _key,
               child: Column(
                 children: <Widget>[
-                  TextFormField(
-                    validator: (text) {
-                      if (text.length == 0) {
-                        return "Este campo correo es requerido";
-                      } else if (!emailRegExp.hasMatch(text)) {
-                        return "El formato para correo no es correcto";
-                      }
-                      return null;
-                    },
-                    keyboardType: TextInputType.emailAddress,
-                    maxLength: 50,
-                    textAlign: TextAlign.center,
-                    decoration: InputDecoration(
-                      hintText: 'Ingrese su Correo',
-                      labelText: 'Correo',
-                      counterText: '',
-                      icon: Icon(Icons.email,
-                          size: 32.0, color: Colors.blue[800]),
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: 10),
+                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(26.5)),
+                    child: TextFormField(
+                      validator: (text) {
+                        if (text.length == 0) {
+                          return "Este campo correo es requerido";
+                        } else if (!emailRegExp.hasMatch(text)) {
+                          return "El formato para correo no es correcto";
+                        }
+                        return null;
+                      },
+                      keyboardType: TextInputType.emailAddress,
+                      maxLength: 50,
+                      textAlign: TextAlign.left,
+                      decoration: InputDecoration(
+                        hintText: 'Ingrese su Correo',
+                        labelText: 'Correo',
+                        counterText: '',
+                        icon: Icon(
+                          Icons.email,
+                          size: 32.0,
+                          color: Colors.blue[800],
+                        ),
+                        border: InputBorder.none,
+                      ),
+                      onSaved: (text) => _correo = text,
                     ),
-                    onSaved: (text) => _correo = text,
                   ),
-                  TextFormField(
-                    validator: (text) {
-                      if (text.length == 0) {
-                        return "Este campo contraseña es requerido";
-                      } else if (text.length <= 5) {
-                        return "Su contraseña debe ser al menos de 5 caracteres";
-                      } else if (!contRegExp.hasMatch(text)) {
-                        return "El formato para contraseña no es correcto";
-                      }else if (text != "dracma12") {
-                        return "Correo y/o Contraseña incorrectas";
-                      }
-                      return null;
-                    },
-                    keyboardType: TextInputType.text,
-                    maxLength: 20,
-                    textAlign: TextAlign.center,
-                    decoration: InputDecoration(
-                      hintText: 'Ingrese su Contraseña',
-                      labelText: 'Contraseña',
-                      counterText: '',
-                      icon:
-                          Icon(Icons.lock, size: 32.0, color: Colors.blue[800]),
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: 1),
+                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(26.5)),
+                    child: TextFormField(
+                      validator: (text) {
+                        if (text.length == 0) {
+                          return "Este campo contraseña es requerido";
+                        } else if (text.length <= 5) {
+                          return "Su contraseña debe ser al menos de 5 caracteres";
+                        } else if (!contRegExp.hasMatch(text)) {
+                          return "El formato para contraseña no es correcto";
+                        } else if (text != "dracma12") {
+                          return "Correo y/o Contraseña incorrectas";
+                        }
+                        return null;
+                      },
+                      keyboardType: TextInputType.text,
+                      maxLength: 20,
+                      textAlign: TextAlign.left,
+                      decoration: InputDecoration(
+                        hintText: 'Ingrese su Contraseña',
+                        labelText: 'Contraseña',
+                        counterText: '',
+                        icon: Icon(Icons.lock,
+                            size: 32.0, color: Colors.blue[800]),
+                        suffixIcon: Icon(
+                          Icons.visibility,
+                          color: Colors.black,
+                        ),
+                        border: InputBorder.none,
+                      ),
+                      obscureText: true,
+                      onSaved: (text) => _contrasena = text,
                     ),
-                    obscureText: true,
-                    onSaved: (text) => _contrasena = text,
                   ),
-                  IconButton(
-                    onPressed: () {
-                      if (_key.currentState.validate()) {
-                        _key.currentState.save();
-                        //Aqui se llamaria a su API para hacer el login
-                        setState(() {
-                          _logueado = true;
-                        });
-                        mensaje = 'Gracias \n $_correo \n $_contrasena';
+                  SizedBox(height: 10,),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal:5 , vertical: 1),
+                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(color: Colors.white),
+                        borderRadius: BorderRadius.circular(10.0)),
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: RaisedButton(
+                        color: Colors.white,
+                        child: Text("LOGIN"),
+                        onPressed: () {
+                          if (_key.currentState.validate()) {
+                            _key.currentState.save();
+                            //Aqui se llamaria a su API para hacer el login
+                            setState(() {
+                              _logueado = true;
+                            });
+                            mensaje = 'Gracias \n $_correo \n $_contrasena';
 //                      Una forma correcta de llamar a otra pantalla
 //                      Navigator.of(context).push(HomeScreen.route(mensaje));
-                      }
-                    },
-                    icon: Icon(
-                      Icons.arrow_forward,
-                      size: 42.0,
-                      color: Colors.blue[800],
+                          }
+                        },
+                      ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),

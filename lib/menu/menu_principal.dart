@@ -131,7 +131,7 @@ class _MenuPagina extends State<MenuPagina>
       body: Stack(
         children: <Widget>[
           Container(
-            height: size.height * .123,
+            height: size.height * .36,
             decoration: BoxDecoration(
               color: Colors.orange[200],
             ),
