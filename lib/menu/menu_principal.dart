@@ -259,77 +259,68 @@ class _MenuPagina extends State<MenuPagina>
               ),
             ),
           ),
-          Stack(children: <Widget>[
-            Positioned(
-              top: 49,
-              child: Container(
-                //color: Colors.red[600],
-                margin: EdgeInsets.symmetric(vertical: 50),
-                //padding: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
-
-                child: GridView.count(
-                  primary: false,
-                  padding: const EdgeInsets.all(20),
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
-                  crossAxisCount: 2,
-                  children: <Widget>[
-                    Container(
-                      height: 50,
-                      color: Colors.amber[600],
-                      child: const Center(child: Text('Baby Sister')),
-                    ),
-                    Container(
-                      height: 50,
-                      color: Colors.amber[500],
-                      child: const Center(child: Text('Eléctrico')),
-                    ),
-                    Container(
-                      height: 50,
-                      color: Colors.amber[100],
-                      child: const Center(child: Text('Electromecánico')),
-                    ),
-                    Container(
-                      height: 50,
-                      color: Colors.amber[600],
-                      child: const Center(child: Text('Enfermería')),
-                    ),
-                    Container(
-                      height: 50,
-                      color: Colors.amber[500],
-                      child: const Center(child: Text('Gásfiter')),
-                    ),
-                    Container(
-                      height: 50,
-                      color: Colors.amber[100],
-                      child: const Center(child: Text('Informático')),
-                    ),
-                    Container(
-                      height: 50,
-                      color: Colors.amber[600],
-                      child: const Center(child: Text('Kinesiólogo')),
-                    ),
-                    Container(
-                      height: 50,
-                      color: Colors.amber[500],
-                      child: const Center(child: Text('Mecánico')),
-                    ),
-                    Container(
-                      height: 50,
-                      color: Colors.amber[100],
-                      child: const Center(child: Text('Pedagogía básica')),
-                    ),
-                    Container(
-                      height: 50,
-                      color: Colors.amber[600],
-                      child: const Center(child: Text('Turismo')),
-                    ),
-
-                  ],
-                ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0,100,0,0),
+            child: GridView.count(
+                primary: false,
+                padding: const EdgeInsets.all(20),
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                crossAxisCount: 2,
+                children: <Widget>[
+                  Container(
+                    height: 50,
+                    color: Colors.amber[600],
+                    child: const Center(child: Text('Baby Sister')),
+                  ),
+                  Container(
+                    height: 50,
+                    color: Colors.amber[500],
+                    child: const Center(child: Text('Eléctrico')),
+                  ),
+                  Container(
+                    height: 50,
+                    color: Colors.amber[100],
+                    child: const Center(child: Text('Electromecánico')),
+                  ),
+                  Container(
+                    height: 50,
+                    color: Colors.amber[600],
+                    child: const Center(child: Text('Enfermería')),
+                  ),
+                  Container(
+                    height: 50,
+                    color: Colors.amber[500],
+                    child: const Center(child: Text('Gásfiter')),
+                  ),
+                  Container(
+                    height: 50,
+                    color: Colors.amber[100],
+                    child: const Center(child: Text('Informático')),
+                  ),
+                  Container(
+                    height: 50,
+                    color: Colors.amber[600],
+                    child: const Center(child: Text('Kinesiólogo')),
+                  ),
+                  Container(
+                    height: 50,
+                    color: Colors.amber[500],
+                    child: const Center(child: Text('Mecánico')),
+                  ),
+                  Container(
+                    height: 50,
+                    color: Colors.amber[100],
+                    child: const Center(child: Text('Pedagogía básica')),
+                  ),
+                  Container(
+                    height: 50,
+                    color: Colors.amber[600],
+                    child: const Center(child: Text('Turismo')),
+                  ),
+                ],
               ),
-            ),
-          ]),
+          ),
         ],
       ),
       // descomentar _get para usar barra lateral, descomentar _children para barra inferior
