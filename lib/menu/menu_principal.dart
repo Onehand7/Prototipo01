@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proto01/menu/perfil/perfil.dart';
 import 'package:proto01/menu/configuracion/confi.dart';
-
+import 'package:proto01/menu/solicitud/page_solicitud.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
@@ -269,53 +269,78 @@ class _MenuPagina extends State<MenuPagina>
               mainAxisSpacing: 10,
               crossAxisCount: 2,
               children: <Widget>[
-                Container(
-                  height: 50,
-                  color: Colors.amber[600],
-                  child: const Center(child: Text('Baby Sister')),
-                ),
-                Container(
-                  height: 50,
+                Card(
+                    elevation: 20,
+                    color: Colors.amber[600],
+                    child: InkWell(
+                      splashColor: Colors.blue.withAlpha(50),
+                      onTap: () {},
+                      child: Padding(
+                          padding: EdgeInsets.all(0),
+                          child: Stack(
+                            children: <Widget>[
+                              SizedBox(
+                                  height: double.infinity,
+                                  width: double.infinity,
+                                  child: Opacity(
+                                      opacity: 0,
+                                      child: RaisedButton(
+                                        onPressed: (){
+                                          Navigator.of(context).push(MaterialPageRoute(
+                                            builder: (context) => PageSolicitud(),
+                                            ));
+                                        }
+                                      )
+                                  )
+                              ),
+                              Center(
+                                child: Text("Baby Sister"),
+                              )
+                            ],
+                          )),
+                    )),
+                Card(
+                  elevation: 20,
                   color: Colors.amber[500],
                   child: const Center(child: Text('Eléctrico')),
                 ),
-                Container(
-                  height: 50,
+                Card(
+                  elevation: 20,
                   color: Colors.amber[100],
                   child: const Center(child: Text('Electromecánico')),
                 ),
-                Container(
-                  height: 50,
+                Card(
+                  elevation: 20,
                   color: Colors.amber[600],
                   child: const Center(child: Text('Enfermería')),
                 ),
-                Container(
-                  height: 50,
+                Card(
+                  elevation: 20,
                   color: Colors.amber[500],
                   child: const Center(child: Text('Gásfiter')),
                 ),
-                Container(
-                  height: 50,
+                Card(
+                  elevation: 20,
                   color: Colors.amber[100],
                   child: const Center(child: Text('Informático')),
                 ),
-                Container(
-                  height: 50,
+                Card(
+                  elevation: 20,
                   color: Colors.amber[600],
                   child: const Center(child: Text('Kinesiólogo')),
                 ),
-                Container(
-                  height: 50,
+                Card(
+                  elevation: 20,
                   color: Colors.amber[500],
                   child: const Center(child: Text('Mecánico')),
                 ),
-                Container(
-                  height: 50,
+                Card(
+                  elevation: 20,
                   color: Colors.amber[100],
                   child: const Center(child: Text('Pedagogía básica')),
                 ),
-                Container(
-                  height: 50,
+                Card(
+                  elevation: 20,
                   color: Colors.amber[600],
                   child: const Center(child: Text('Turismo')),
                 ),
