@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proto01/menu/perfil/perfil.dart';
 import 'package:proto01/menu/configuracion/confi.dart';
-
+//import 'package:proto01/menu/tabs/displays.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
@@ -80,29 +80,13 @@ class _MenuPagina extends State<MenuPagina>
   //   DisplaysWidget(Colors.pinkAccent),
   //   DisplaysWidget(Colors.yellowAccent),
   // ];
-  final tabs = [
-    Center(
-      child: Text("Buscar"),
-    ),
-    Center(
-      child: Text("Favoritos"),
-    ),
-    Center(
-      child: Text("Lista"),
-    ),
-    Center(
-      child: Text("Mi Perfil"),
-    ),
-    //PerfilPage(),
-  ];
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return new Scaffold(
       appBar: new AppBar(
-        title: Text("One Hand "),
-        titleSpacing: 80,
+        title: new Text("One Hand "),
         backgroundColor: Colors.orangeAccent,
       ),
       drawer: new Drawer(
@@ -113,7 +97,7 @@ class _MenuPagina extends State<MenuPagina>
               accountEmail: new Text("mtapiar5@alumnos.ceduc.cl"),
               currentAccountPicture: new GestureDetector(
                 child: new CircleAvatar(
-                  backgroundColor: Colors.blue[100],
+                  backgroundColor: Colors.blueAccent,
                   child: Text(
                     "M",
                     style: TextStyle(fontSize: 40.0),
@@ -121,127 +105,33 @@ class _MenuPagina extends State<MenuPagina>
                 ),
               )),
           new ListTile(
-            title: new Text(
-              "Mi Perfil",
-              style: TextStyle(fontSize: 18),
-            ),
-            leading: Icon(
-              Icons.account_circle,
-              size: 40,
-            ),
-            trailing: Icon(
-              Icons.more_vert,
-              size: 40,
-            ),
+            title: new Text("Perfil"),
+            leading: Icon(Icons.account_box),
             selected: (1 == _selectDrawerItem),
             onTap: () {
               _onSelectItem(1);
             },
           ),
-          Divider(
-            height: 10,
-            indent: 15,
-            endIndent: 20,
-            thickness: 1,
-          ),
           new ListTile(
-            title: new Text(
-              "Noticias",
-              style: TextStyle(fontSize: 18),
-            ),
-            leading: Icon(
-              Icons.fiber_new,
-              size: 40,
-            ),
+            title: new Text("Configuración"),
+            leading: Icon(Icons.settings),
             selected: (2 == _selectDrawerItem),
             onTap: () {
               _onSelectItem(2);
             },
           ),
-          Divider(
-            height: 10,
-            indent: 15,
-            endIndent: 20,
-            thickness: 1,
-          ),
+          Divider(),
           new ListTile(
-            title: new Text(
-              "Atención al cliente",
-              style: TextStyle(fontSize: 18),
-            ),
-            leading: Icon(
-              Icons.chat,
-              size: 40,
-            ),
-            selected: (3 == _selectDrawerItem),
-            onTap: () {
-              _onSelectItem(3);
-            },
-          ),
-          Divider(
-            height: 10,
-            indent: 15,
-            endIndent: 20,
-            thickness: 1,
-          ),
-          new ListTile(
-            title: new Text(
-              "Configuración",
-              style: TextStyle(fontSize: 18),
-            ),
-            leading: Icon(
-              Icons.settings,
-              size: 40,
-            ),
-            selected: (4 == _selectDrawerItem),
-            onTap: () {
-              _onSelectItem(4);
-            },
-          ),
-          Divider(
-            height: 10,
-            indent: 15,
-            endIndent: 20,
-            thickness: 1,
-          ),
-          new ListTile(
-            title: new Text(
-              "Acerca de onehand",
-              style: TextStyle(fontSize: 18),
-            ),
-            leading: Icon(
-              Icons.pan_tool,
-              size: 37,
-            ),
-            selected: (5 == _selectDrawerItem),
-            onTap: () {
-              _onSelectItem(5);
-            },
-          ),
-          Divider(
-            height: 10,
-            indent: 15,
-            endIndent: 20,
-            thickness: 1,
-          ),
-          new ListTile(
-            title: new Text(
-              "Cerrar sesión",
-              style: TextStyle(fontSize: 18),
-            ),
-            leading: Icon(
-              Icons.exit_to_app,
-              size: 40,
-            ),
+            title: new Text("Salir"),
+            leading: Icon(Icons.exit_to_app),
             onTap: () {},
           ),
         ],
       )),
       body: Stack(
         children: <Widget>[
-          //tabs[_currentIndex],
           Container(
-            height: size.height * .30,
+            height: size.height * .36,
             decoration: BoxDecoration(
               color: Colors.orange[200],
             ),
@@ -323,11 +213,12 @@ class _MenuPagina extends State<MenuPagina>
           ),
         ],
       ),
+
       // descomentar _get para usar barra lateral, descomentar _children para barra inferior
       //_children[_currentIndex],
       //_getDrawerItemWidget(_selectDrawerItem),
 
-      //Barra de navegacion inferior
+      //pestañas de abajo del dispositivo
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: onTabTapped,
@@ -335,21 +226,12 @@ class _MenuPagina extends State<MenuPagina>
         type: BottomNavigationBarType.fixed,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            title: Text("Buscar"),
-          ),
+              icon: Icon(Icons.search), title: Text("Buscar")),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            title: Text("Favoritos"),
-          ),
+              icon: Icon(Icons.favorite), title: Text("Favoritos")),
+          BottomNavigationBarItem(icon: Icon(Icons.list), title: Text("lista")),
           BottomNavigationBarItem(
-            icon: Icon(Icons.list),
-            title: Text("lista"),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
-            title: Text("Mi Perfil"),
-          )
+              icon: Icon(Icons.account_circle), title: Text("Mi Perfil"))
         ],
       ),
     );
