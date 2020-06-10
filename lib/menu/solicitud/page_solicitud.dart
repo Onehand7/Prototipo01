@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proto01/menu/listaProfesionales/paga_profesionales.dart';
 
 class PageSolicitud extends StatefulWidget {
   @override
@@ -19,8 +20,91 @@ class _PageSolicitud extends State<PageSolicitud> {
           ListView(
             children: <Widget>[
               Container(
-                child: Text("Escriba el titulo de la solicitud")
-                )
+                  margin: EdgeInsets.symmetric(vertical: 25),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 12,
+                  ),
+                  child: Text(
+                    "Escriba el título de la solicitud",
+                    style: TextStyle(fontSize: 25),
+                  )),
+              Container(
+                margin: EdgeInsets.symmetric(vertical: 5),
+                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                /* decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(26.5)), */
+                child: TextField(
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      //hintText: "Nombre su solicitud",
+                      labelText: 'Nueva solicitud',
+                      counterText: '',
+                      prefixIcon: Icon(Icons.border_color)),
+                ),
+              ),
+              Container(
+                  margin: EdgeInsets.symmetric(vertical: 20),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 12,
+                  ),
+                  child: Text(
+                    "Describa su problema",
+                    style: TextStyle(fontSize: 25),
+                  )),
+              Container(
+                margin: EdgeInsets.symmetric(vertical: 5),
+                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                /* decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(26.5)), */
+                child: TextField(
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      //hintText: "Nombre su solicitud",
+                      labelText: 'Escribe con detalle lo qué necesitas',
+                      counterText: '',
+                      prefixIcon: Icon(Icons.border_color)),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                child: Text(
+                    "*Recuerda que mientras mas detalles añadas mas rapido será encontrar un profesional."),
+              ),
+              Container(
+                  margin: EdgeInsets.symmetric(vertical: 20),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 12,
+                  ),
+                  child: Text(
+                    "Fotos del servicio",
+                    style: TextStyle(fontSize: 25),
+                  )),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                child: Text(
+                    "Puedes añadir fotos de tu galeria. Esto ayudara a los profesionales a entender su problema."),
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                child: RaisedButton(
+                  onPressed: () {},
+                  child: const Text("Agregar fotos"),
+                ),
+              ),
+              SizedBox(height: 50,),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                child: RaisedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => PageListaProfesionales(),
+                      ));
+                  },
+                  child: const Text("Siguiente"),
+                ),
+              ),
             ],
           )
         ],
@@ -28,4 +112,3 @@ class _PageSolicitud extends State<PageSolicitud> {
     );
   }
 }
-

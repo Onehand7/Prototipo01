@@ -179,32 +179,40 @@ class _LoginScreen extends State<LoginScreen>
                       onSaved: (text) => _contrasena = text,
                     ),
                   ),
-                  SizedBox(height: 10,),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal:5 , vertical: 1),
-                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(color: Colors.white),
-                        borderRadius: BorderRadius.circular(10.0)),
-                    child: SizedBox(
-                      width: double.infinity,
-                      child: RaisedButton(
-                        color: Colors.white,
-                        child: Text("LOGIN"),
-                        onPressed: () {
-                          if (_key.currentState.validate()) {
-                            _key.currentState.save();
-                            //Aqui se llamaria a su API para hacer el login
-                            setState(() {
-                              _logueado = true;
-                            });
-                            mensaje = 'Gracias \n $_correo \n $_contrasena';
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Card(
+                    elevation: 20,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Stack(children: <Widget>[
+                        SizedBox(
+                          width: 350,
+                          height: 50,
+                          child: Opacity(
+                            opacity: 0,
+                            child: RaisedButton(
+                              color: Colors.white,
+                              //child: Text("LOGIN"),
+                              onPressed: () {
+                                if (_key.currentState.validate()) {
+                                  _key.currentState.save();
+                                  //Aqui se llamaria a su API para hacer el login
+                                  setState(() {
+                                    _logueado = true;
+                                  });
+                                  mensaje =
+                                      'Gracias \n $_correo \n $_contrasena';
 //                      Una forma correcta de llamar a otra pantalla
 //                      Navigator.of(context).push(HomeScreen.route(mensaje));
-                          }
-                        },
-                      ),
+                                }
+                              },
+                            ),
+                          ),
+                        ),
+                        Center(child: Text("LOGIN"))
+                      ]),
                     ),
                   ),
                 ],
