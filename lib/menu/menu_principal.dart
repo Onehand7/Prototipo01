@@ -6,6 +6,8 @@ import 'package:proto01/menu/configuracion/confi.dart';
 import 'package:proto01/menu/solicitud/page_solicitud.dart';
 import 'package:proto01/menu/solicitud/lista_solicitud.dart';
 import 'package:proto01/menu/BarraInferior/BottonNavigationBar.dart';
+import 'package:proto01/menu/Inicio.dart';
+import 'package:proto01/menu/perfil/mi_perfil.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
@@ -100,9 +102,10 @@ class _MenuPagina extends State<MenuPagina>
   ];
   Widget BarraInferior(int currentIndex){
     switch (currentIndex) {
-      case 0: return ListaSolicitud();
-      case 1: return PageChat();
-      case 2: return PagePerfil();
+      case 0: return PageInicio();
+      case 1: return ListaSolicitud();
+      case 2: return PageChat();
+      case 3: return PageMiPerfil();
         break;
       default:
     }
@@ -112,11 +115,11 @@ class _MenuPagina extends State<MenuPagina>
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return new Scaffold(
-      // appBar: new AppBar(
-      //   title: Text("One Hand "),
-      //   titleSpacing: 80,
-      //   backgroundColor: Colors.orangeAccent,
-      // ),
+      appBar: new AppBar(
+        title: Text("One Hand "),
+        titleSpacing: 80,
+        backgroundColor: Colors.orangeAccent,
+      ),
       drawer: new Drawer(
         child: new ListView(
           children: <Widget>[
@@ -250,155 +253,42 @@ class _MenuPagina extends State<MenuPagina>
           ],
         ),
       ),
-      body: Stack(
-        children: <Widget>[
-          
-          Container(
-            height: size.height * .30,
-            decoration: BoxDecoration(
-              color: Colors.orange[200],
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 25),
-            padding: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
-            decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(26.5)),
-            child: TextField(
-              decoration: InputDecoration(
-                hintText: "Buscar",
-                icon: Icon(Icons.search),
-                border: InputBorder.none,
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(0, 100, 0, 0),
-            child: GridView.count(
-              primary: false,
-              padding: const EdgeInsets.all(20),
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-              crossAxisCount: 2,
-              children: <Widget>[
-                Card(
-                    elevation: 20,
-                    color: Colors.amber[600],
-                    child: InkWell(
-                      splashColor: Colors.blue.withAlpha(50),
-                      onTap: () {},
-                      child: Padding(
-                          padding: EdgeInsets.all(0),
-                          child: Stack(
-                            children: <Widget>[
-                              SizedBox(
-                                  height: double.infinity,
-                                  width: double.infinity,
-                                  child: Opacity(
-                                      opacity: 0,
-                                      child: RaisedButton(
-                                        onPressed: (){
-                                          Navigator.of(context).push(MaterialPageRoute(
-                                            builder: (context) => PageSolicitud(),
-                                            ));
-                                        }
-                                      )
-                                  )
-                              ),
-                              Center(
-                                child: Text("Baby Sister"),
-                              )
-                            ],
-                          )),
-                    )),
-                Card(
-                  elevation: 20,
-                  color: Colors.amber[500],
-                  child: const Center(child: Text('Eléctrico')),
-                ),
-                Card(
-                  elevation: 20,
-                  color: Colors.amber[100],
-                  child: const Center(child: Text('Electromecánico')),
-                ),
-                Card(
-                  elevation: 20,
-                  color: Colors.amber[600],
-                  child: const Center(child: Text('Enfermería')),
-                ),
-                Card(
-                  elevation: 20,
-                  color: Colors.amber[500],
-                  child: const Center(child: Text('Gásfiter')),
-                ),
-                Card(
-                  elevation: 20,
-                  color: Colors.amber[100],
-                  child: const Center(child: Text('Informático')),
-                ),
-                Card(
-                  elevation: 20,
-                  color: Colors.amber[600],
-                  child: const Center(child: Text('Kinesiólogo')),
-                ),
-                Card(
-                  elevation: 20,
-                  color: Colors.amber[500],
-                  child: const Center(child: Text('Mecánico')),
-                ),
-                Card(
-                  elevation: 20,
-                  color: Colors.amber[100],
-                  child: const Center(child: Text('Pedagogía básica')),
-                ),
-                Card(
-                  elevation: 20,
-                  color: Colors.amber[600],
-                  child: const Center(child: Text('Turismo')),
-                ),
-              ],
-            ),
-          ),
-          //tabs[_currentIndex],
-          //BarraInferior(_currentIndex),
-          PageBarraInferior()
-        ],
-      ),
+      body: BarraInferior(_currentIndex),
 
       // descomentar _get para usar barra lateral, descomentar _children para barra inferior
       //_children[_currentIndex],
       //_getDrawerItemWidget(_selectDrawerItem),
 
       //Barra de navegacion inferior
-      // bottomNavigationBar: BottomNavigationBar(
-      //   currentIndex: _currentIndex,
-      //   onTap: (value){
-      //     _currentIndex= value;
-      //     setState(() {
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        onTap: (value){
+          _currentIndex= value;
+          setState(() {
             
-      //     });
-      //   },
-      //   fixedColor: Colors.orangeAccent,
-      //   type: BottomNavigationBarType.fixed,
-      //   items: <BottomNavigationBarItem>[
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.home),
-      //       title: Text("Inicio"),
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.book),
-      //       title: Text("Solicitudes"),
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.forum),
-      //       title: Text("Chat"),
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.account_circle),
-      //       title: Text("Mi Perfil"),
-      //     )
-      //   ],
-      // ),
+          });
+        },
+        fixedColor: Colors.orangeAccent,
+        type: BottomNavigationBarType.fixed,
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            title: Text("Inicio"),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.book),
+            title: Text("Solicitudes"),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.forum),
+            title: Text("Chat"),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle),
+            title: Text("Mi Perfil"),
+          )
+        ],
+      ),
     );
   }
 
