@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:proto01/menu/chat/page_chat.dart';
+import 'package:proto01/menu/perfil/page_perfil.dart';
 import 'package:proto01/menu/perfil/perfil.dart';
 import 'package:proto01/menu/configuracion/confi.dart';
 import 'package:proto01/menu/solicitud/page_solicitud.dart';
+import 'package:proto01/menu/solicitud/lista_solicitud.dart';
+import 'package:proto01/menu/BarraInferior/BottonNavigationBar.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
@@ -82,29 +86,37 @@ class _MenuPagina extends State<MenuPagina>
   // ];
   final tabs = [
     Center(
-      child: Text("Buscar"),
+      child: Text("Solicitudes"),
     ),
     Center(
-      child: Text("Favoritos"),
+      child: Text("Chat"),
     ),
-    Center(
-      child: Text("Lista"),
-    ),
-    Center(
-      child: Text("Mi Perfil"),
-    ),
-    //PerfilPage(),
+    PagePerfil()
+    
+    // Center(
+    //   child: Text("Mi Perfil"),
+    // ),
+    
   ];
+  Widget BarraInferior(int currentIndex){
+    switch (currentIndex) {
+      case 0: return ListaSolicitud();
+      case 1: return PageChat();
+      case 2: return PagePerfil();
+        break;
+      default:
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return new Scaffold(
-      appBar: new AppBar(
-        title: Text("One Hand "),
-        titleSpacing: 80,
-        backgroundColor: Colors.orangeAccent,
-      ),
+      // appBar: new AppBar(
+      //   title: Text("One Hand "),
+      //   titleSpacing: 80,
+      //   backgroundColor: Colors.orangeAccent,
+      // ),
       drawer: new Drawer(
         child: new ListView(
           children: <Widget>[
@@ -240,7 +252,7 @@ class _MenuPagina extends State<MenuPagina>
       ),
       body: Stack(
         children: <Widget>[
-          //tabs[_currentIndex],
+          
           Container(
             height: size.height * .30,
             decoration: BoxDecoration(
@@ -347,37 +359,46 @@ class _MenuPagina extends State<MenuPagina>
               ],
             ),
           ),
+          //tabs[_currentIndex],
+          //BarraInferior(_currentIndex),
+          PageBarraInferior()
         ],
       ),
+
       // descomentar _get para usar barra lateral, descomentar _children para barra inferior
       //_children[_currentIndex],
       //_getDrawerItemWidget(_selectDrawerItem),
 
       //Barra de navegacion inferior
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: onTabTapped,
-        fixedColor: Colors.orangeAccent,
-        type: BottomNavigationBarType.fixed,
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            title: Text("Buscar"),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            title: Text("Favoritos"),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.list),
-            title: Text("lista"),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
-            title: Text("Mi Perfil"),
-          )
-        ],
-      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   currentIndex: _currentIndex,
+      //   onTap: (value){
+      //     _currentIndex= value;
+      //     setState(() {
+            
+      //     });
+      //   },
+      //   fixedColor: Colors.orangeAccent,
+      //   type: BottomNavigationBarType.fixed,
+      //   items: <BottomNavigationBarItem>[
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.home),
+      //       title: Text("Inicio"),
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.book),
+      //       title: Text("Solicitudes"),
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.forum),
+      //       title: Text("Chat"),
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.account_circle),
+      //       title: Text("Mi Perfil"),
+      //     )
+      //   ],
+      // ),
     );
   }
 

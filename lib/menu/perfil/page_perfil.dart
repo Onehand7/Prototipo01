@@ -4,6 +4,7 @@ class PagePerfil extends StatefulWidget {
   @override
   _PagePerfil createState() => new _PagePerfil();
 }
+int _currentIndex = 0;
 
 class _PagePerfil extends State<PagePerfil> {
   @override
@@ -11,7 +12,7 @@ class _PagePerfil extends State<PagePerfil> {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Perfil del Pro"),
+        title: Text("Perfil del Profesional"),
         titleSpacing: 30,
         backgroundColor: Colors.orangeAccent,
       ),
@@ -137,22 +138,137 @@ class _PagePerfil extends State<PagePerfil> {
             child: Card(
               elevation: 20,
               child: Container(
-                //color: Colors.blueAccent,
-                height: double.infinity,
-                width: 320,
-                child: ListView(
-                  children: <Widget>[
-                    ListTile(
-                      title: Text("Certificado"),
-                    )
-                  ],
-                )
-              ),
+                  //color: Colors.blueAccent,
+                  height: double.infinity,
+                  width: 320,
+                  child: ListView(
+                    children: <Widget>[
+                      ListTile(
+                        leading: Icon(
+                          Icons.brightness_auto,
+                          color: Colors.blue,
+                        ),
+                        title: Text(
+                          "Certificado",
+                          style: TextStyle(fontSize: 18),
+                        ),
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.work),
+                        title: Text("Computadoras - Desarrollo de App"),
+                      ),
+                      Divider(
+                        height: 10,
+                        indent: 15,
+                        endIndent: 20,
+                        thickness: 1,
+                      ),
+                      ListTile(
+                        title: Text("Acerca del profesional"),
+                        subtitle: Text(
+                            "está capacitado para administrar redes de datos Lan, administrar sistemas operativos para servidores y desarrollar sistemas web y aplicaciones de escritorio, asegurando la continuidad operativa de la Organización en estos ámbitos. Posee un alto compromiso con el medio ambiente, la prevención como parte fundamental de su quehacer productivo, impulsando actitudes y habilidades que le permiten integrarse al mundo laboral como un profesional íntegro, comprometido con los valores que conciben su formación como un aporte a la sociedad, desarrollando su capacidad profesional innovadora, creativa y emprendedora."),
+                      ),
+                      Divider(
+                        height: 10,
+                        indent: 15,
+                        endIndent: 20,
+                        thickness: 1,
+                      ),
+                      ListTile(
+                        title: Text("Comentarios"),
+                      ),
+                      ListTile(
+                        title: Row(
+                          children: <Widget>[
+                            Text("Por: Pamela B"),
+                            Icon(
+                              Icons.star,
+                              color: Colors.yellow,
+                            ),
+                            Icon(
+                              Icons.star,
+                              color: Colors.yellow,
+                            ),
+                            Icon(
+                              Icons.star,
+                              color: Colors.yellow,
+                            ),
+                            Icon(
+                              Icons.star,
+                              color: Colors.yellow,
+                            ),
+                            Icon(
+                              Icons.star_border,
+                              color: Colors.yellow,
+                            ),
+                          ],
+                        ),
+                        subtitle: Text("Excelente profesiona, lo recomiendo"),
+                      ),
+                      Divider(
+                        height: 10,
+                        indent: 15,
+                        endIndent: 20,
+                        thickness: 1,
+                      ),
+                      ListTile(
+                        title: Row(
+                          children: <Widget>[
+                            Text("Por: Carlos A"),
+                            Icon(
+                              Icons.star,
+                              color: Colors.yellow,
+                            ),
+                            Icon(
+                              Icons.star,
+                              color: Colors.yellow,
+                            ),
+                            Icon(
+                              Icons.star,
+                              color: Colors.yellow,
+                            ),
+                            Icon(
+                              Icons.star,
+                              color: Colors.yellow,
+                            ),
+                            Icon(
+                              Icons.star,
+                              color: Colors.yellow,
+                            ),
+                          ],
+                        ),
+                        subtitle: Text(
+                            "100% recomendable, trabajo muy bien es muy amable y educado."),
+                      ),
+                    ],
+                  )),
             ),
           ),
         ],
         overflow: Overflow.visible,
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        onTap: onTabTapped,
+        fixedColor: Colors.orangeAccent,
+        type: BottomNavigationBarType.fixed,
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.arrow_back),
+            title: Text("Cancelar"),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.pan_tool),
+            title: Text("Aceptar"),
+          )
+        ],
+      ),
     );
+  }
+  // metodo para las pestañas de abajo del dispositivo
+  void onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
   }
 }
