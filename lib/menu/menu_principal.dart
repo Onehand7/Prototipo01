@@ -6,7 +6,6 @@ import 'package:proto01/menu/solicitud/page_solicitud.dart';
 import 'package:proto01/menu/solicitud/lista_solicitud.dart';
 import 'package:proto01/menu/Inicio.dart';
 import 'package:proto01/menu/perfil/mi_perfil.dart';
-import 'package:proto01/menu/drawer/page_drawer.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
@@ -96,12 +95,11 @@ class _MenuPagina extends State<MenuPagina>
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return new Scaffold(
-      
       body: BarraInferior(_currentIndex),
       // descomentar _get para usar barra lateral, descomentar _children para barra inferior
       //_children[_currentIndex],
       //_getDrawerItemWidget(_selectDrawerItem),
-
+      
       //Barra de navegacion inferior
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,

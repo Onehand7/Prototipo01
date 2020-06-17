@@ -6,8 +6,6 @@ class ListaSolicitud extends StatefulWidget {
   ListaSolicitud({this.data});
   @override
   _ListaSolicitud createState() => new _ListaSolicitud(data2: data);
-
-  
 }
 
 class _ListaSolicitud extends State<ListaSolicitud> {
@@ -17,11 +15,24 @@ class _ListaSolicitud extends State<ListaSolicitud> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+            icon: Icon(
+              Icons.arrow_back,
+              size: 30,
+            ),
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => MenuPagina(
+                  mensaje: null,
+                ),
+              ));
+            }),
         //se pasa el titulo de Menu principal a lista solicitud
-        title: Center(child: Text("${data2.text}")),
+        title: Text("${data2.text}"),
         titleSpacing: 100,
         backgroundColor: Colors.orangeAccent,
       ),
+      //drawer: PageDrawer(),
       body: Stack(
         children: <Widget>[
           ListView(
@@ -57,7 +68,10 @@ class _ListaSolicitud extends State<ListaSolicitud> {
                           Row(
                             children: <Widget>[
                               Text("Estado:"),
-                              Text("Activo", style: TextStyle(color: Colors.red),)
+                              Text(
+                                "Activo",
+                                style: TextStyle(color: Colors.red),
+                              )
                             ],
                           )
                         ],
@@ -97,7 +111,10 @@ class _ListaSolicitud extends State<ListaSolicitud> {
                           Row(
                             children: <Widget>[
                               Text("Estado:"),
-                              Text("Finalizado", style: TextStyle(color: Colors.green),)
+                              Text(
+                                "Finalizado",
+                                style: TextStyle(color: Colors.green),
+                              )
                             ],
                           )
                         ],
@@ -113,8 +130,3 @@ class _ListaSolicitud extends State<ListaSolicitud> {
     );
   }
 }
-
-
-
-
-
