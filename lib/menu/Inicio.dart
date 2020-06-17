@@ -1,16 +1,167 @@
 import 'package:flutter/material.dart';
 import 'package:proto01/menu/solicitud/page_solicitud.dart';
+import 'package:proto01/menu/menu_principal.dart';
 class PageInicio extends StatefulWidget {
+  final Data data;
+  PageInicio({this.data});
   @override
-  _PageInicio createState() => new _PageInicio();
+  _PageInicio createState() => new _PageInicio(data2: data);
 }
 
 
 class _PageInicio extends State<PageInicio> {
+  final Data data2;
+  _PageInicio({this.data2});
+  //VARIABLES
+  int _selectDrawerItem = 0;
+  _onSelectItem(int pos) {
+    Navigator.of(context).pop();
+    setState(() {
+      _selectDrawerItem = pos;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        title: Text("${data2.text}"),
+        titleSpacing: 80,
+        backgroundColor: Colors.orangeAccent,
+      ),
+      drawer: new Drawer(
+        child: new ListView(
+          children: <Widget>[
+            new UserAccountsDrawerHeader(
+                accountName: new Text("Matias Tapia"),
+                accountEmail: new Text("mtapiar5@alumnos.ceduc.cl"),
+                currentAccountPicture: new GestureDetector(
+                  child: new CircleAvatar(
+                    backgroundColor: Colors.blue[100],
+                    child: Text(
+                      "M",
+                      style: TextStyle(fontSize: 40.0),
+                    ),
+                  ),
+                )),
+            new ListTile(
+              title: new Text(
+                "Mi Perfil",
+                style: TextStyle(fontSize: 18),
+              ),
+              leading: Icon(
+                Icons.account_circle,
+                size: 40,
+              ),
+              trailing: Icon(
+                Icons.more_vert,
+                size: 40,
+              ),
+              selected: (1 == _selectDrawerItem),
+              onTap: () {
+                _onSelectItem(1);
+              },
+            ),
+            Divider(
+              height: 10,
+              indent: 15,
+              endIndent: 20,
+              thickness: 1,
+            ),
+            new ListTile(
+              title: new Text(
+                "Noticias",
+                style: TextStyle(fontSize: 18),
+              ),
+              leading: Icon(
+                Icons.fiber_new,
+                size: 40,
+              ),
+              selected: (2 == _selectDrawerItem),
+              onTap: () {
+                _onSelectItem(2);
+              },
+            ),
+            Divider(
+              height: 10,
+              indent: 15,
+              endIndent: 20,
+              thickness: 1,
+            ),
+            new ListTile(
+              title: new Text(
+                "Atención al cliente",
+                style: TextStyle(fontSize: 18),
+              ),
+              leading: Icon(
+                Icons.chat,
+                size: 40,
+              ),
+              selected: (3 == _selectDrawerItem),
+              onTap: () {
+                _onSelectItem(3);
+              },
+            ),
+            Divider(
+              height: 10,
+              indent: 15,
+              endIndent: 20,
+              thickness: 1,
+            ),
+            new ListTile(
+              title: new Text(
+                "Configuración",
+                style: TextStyle(fontSize: 18),
+              ),
+              leading: Icon(
+                Icons.settings,
+                size: 40,
+              ),
+              selected: (4 == _selectDrawerItem),
+              onTap: () {
+                _onSelectItem(4);
+              },
+            ),
+            Divider(
+              height: 10,
+              indent: 15,
+              endIndent: 20,
+              thickness: 1,
+            ),
+            new ListTile(
+              title: new Text(
+                "Acerca de onehand",
+                style: TextStyle(fontSize: 18),
+              ),
+              leading: Icon(
+                Icons.pan_tool,
+                size: 37,
+              ),
+              selected: (5 == _selectDrawerItem),
+              onTap: () {
+                _onSelectItem(5);
+              },
+            ),
+            Divider(
+              height: 10,
+              indent: 15,
+              endIndent: 20,
+              thickness: 1,
+            ),
+            new ListTile(
+              title: new Text(
+                "Cerrar sesión",
+                style: TextStyle(fontSize: 18),
+              ),
+              leading: Icon(
+                Icons.exit_to_app,
+                size: 40,
+              ),
+              onTap: () {},
+            ),
+          ],
+        ),
+      ),
       body: Stack(
         children: <Widget>[
           Container(

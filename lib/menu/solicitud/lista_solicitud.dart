@@ -1,16 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:proto01/menu/menu_principal.dart';
 
 class ListaSolicitud extends StatefulWidget {
+  final Data data;
+  ListaSolicitud({this.data});
   @override
-  _ListaSolicitud createState() => new _ListaSolicitud();
+  _ListaSolicitud createState() => new _ListaSolicitud(data2: data);
+
+  
 }
 
 class _ListaSolicitud extends State<ListaSolicitud> {
+  final Data data2;
+  _ListaSolicitud({this.data2});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Mis Solicitudes"),
+        //se pasa el titulo de Menu principal a lista solicitud
+        title: Center(child: Text("${data2.text}")),
         titleSpacing: 100,
         backgroundColor: Colors.orangeAccent,
       ),
@@ -105,3 +113,8 @@ class _ListaSolicitud extends State<ListaSolicitud> {
     );
   }
 }
+
+
+
+
+
