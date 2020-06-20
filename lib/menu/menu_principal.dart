@@ -83,7 +83,7 @@ class _MenuPagina extends State<MenuPagina>
     switch (currentIndex) {
       case 0: return PageInicio(data: Data(text: "OneHand7"),);
       case 1: return ListaSolicitud(data: Data(text: "Solicitudes "));
-      case 2: return PageChat(data: Data(text: "Chat "));
+      case 2: return PageChat(data: Data(text: "Chat"));
       case 3: return PageMiPerfil(data: Data(text: "Mi Perfil"),);
         break;
       default:
