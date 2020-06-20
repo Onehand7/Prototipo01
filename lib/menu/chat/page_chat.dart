@@ -27,12 +27,33 @@ class _PageChat extends State<PageChat> {
                 ),
               ));
             }),
-        title: Text("Chat"),
+        title: Text("${data2.text}"),
         titleSpacing: 100,
         backgroundColor: Colors.orangeAccent,
+        actions: <Widget>[
+          IconButton(icon: Icon(Icons.more_vert), onPressed: () {})
+        ],
       ),
       //drawer: PageDrawer(),
-      body: Center(child: Text("CHAT")),
+      body: BuildListView(context),
     );
+  }
+
+  ListView BuildListView(BuildContext context) {
+    final List<String> listaNombre= <String>["Sebastian Arenas","Matias Tapia", "Javiera Jeraldo", "Alan Olivares","Jose Perez","Sara Bustamante", "Julian Castro","Luis Torres","Hector Villalobos","Daniel Basulto"];
+    return ListView.builder(
+        padding: const EdgeInsets.all(8.0),
+        itemCount: listaNombre.length,
+        itemBuilder: (_, int index) {
+          return Card(
+            child: ListTile(
+              leading: Icon(Icons.account_circle, size: 50,),
+              title: Text("${listaNombre[index]}"),
+              subtitle: Text("subtitle"),
+              trailing:
+                  IconButton(icon: Icon(Icons.more_vert), onPressed: (){}),
+            ),
+          );
+        });
   }
 }

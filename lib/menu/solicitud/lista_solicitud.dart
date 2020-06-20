@@ -42,8 +42,6 @@ class _ListaSolicitud extends State<ListaSolicitud> {
                 child: Padding(
                   padding: const EdgeInsets.all(0.0),
                   child: SizedBox(
-                    //width: ,
-                    //height: ,
                     child: RaisedButton(
                       color: Colors.white,
                       onPressed: () {},
