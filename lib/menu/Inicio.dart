@@ -3,6 +3,7 @@ import 'package:proto01/menu/solicitud/page_solicitud.dart';
 import 'package:proto01/menu/menu_principal.dart';
 import 'package:proto01/menu/perfil/mi_perfil.dart';
 import 'package:proto01/menu/configuracion/confi.dart';
+import 'package:proto01/menuLateral/acercade.dart';
 
 class PageInicio extends StatefulWidget {
   final Data data;
@@ -142,8 +143,7 @@ class _PageInicio extends State<PageInicio> {
                   // _onSelectItem(4);
                   Navigator.of(context).pop();
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (BuildContext context) =>
-                          ConfiguracionPage()));
+                      builder: (BuildContext context) => ConfiguracionPage()));
                 },
               ),
               Divider(
@@ -165,6 +165,9 @@ class _PageInicio extends State<PageInicio> {
                 onTap: () {
                   //_onSelectItem(5);
                   Navigator.of(context).pop();
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (BuildContext context) => AcercadeOnehand(
+                          data: Data(text: "Acerca de Onehand"))));
                 },
               ),
               Divider(
