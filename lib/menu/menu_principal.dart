@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proto01/menu/chat/page_chat.dart';
 import 'package:proto01/menu/perfil/perfil.dart';
-import 'package:proto01/menu/configuracion/confi.dart';
+
 import 'package:proto01/menu/solicitud/page_solicitud.dart';
 import 'package:proto01/menu/solicitud/lista_solicitud.dart';
 import 'package:proto01/menu/Inicio.dart';
@@ -23,15 +23,13 @@ class MenuPagina extends StatefulWidget {
 
   @override
   _MenuPagina createState() => new _MenuPagina();
-  
 }
 
 class _MenuPagina extends State<MenuPagina>
     with SingleTickerProviderStateMixin {
   Map data; /////////////////////////////
   List cuentasData;
-  
-  
+
   //VARIABLES
   String text;
   int _currentIndex = 0;
@@ -63,15 +61,15 @@ class _MenuPagina extends State<MenuPagina>
     });
   }
 
-  _getDrawerItemWidget(int pos) {
-    switch (pos) {
-      case 1:
-        return PerfilPage();
-      case 2:
-        return ConfiguracionPage();
-      default:
-    }
-  }
+  // _getDrawerItemWidget(int pos) {
+  //   switch (pos) {
+  //     case 1:
+  //       return PerfilPage();
+  //     case 2:
+  //       return ConfiguracionPage();
+  //     default:
+  //   }
+  // }
 
   _onSelectItem(int pos) {
     Navigator.of(context).pop();
@@ -79,17 +77,25 @@ class _MenuPagina extends State<MenuPagina>
       _selectDrawerItem = pos;
     });
   }
-  Widget BarraInferior(int currentIndex){
+
+  Widget BarraInferior(int currentIndex) {
     switch (currentIndex) {
-      case 0: return PageInicio(data: Data(text: "OneHand7"),);
-      case 1: return ListaSolicitud(data: Data(text: "Solicitudes "));
-      case 2: return PageChat(data: Data(text: "Chat"));
-      case 3: return PageMiPerfil(data: Data(text: "Mi Perfil"),);
+      case 0:
+        return PageInicio(
+          data: Data(text: "OneHand7"),
+        );
+      case 1:
+        return ListaSolicitud(data: Data(text: "Solicitudes "));
+      case 2:
+        return PageChat(data: Data(text: "Chat"));
+      case 3:
+        return PageMiPerfil(
+          data: Data(text: "Mi Perfil"),
+        );
         break;
       default:
     }
   }
-  
 
   @override
   Widget build(BuildContext context) {
@@ -99,15 +105,13 @@ class _MenuPagina extends State<MenuPagina>
       // descomentar _get para usar barra lateral, descomentar _children para barra inferior
       //_children[_currentIndex],
       //_getDrawerItemWidget(_selectDrawerItem),
-      
+
       //Barra de navegacion inferior
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
-        onTap: (value){
-          _currentIndex= value;
-          setState(() {
-            
-          });
+        onTap: (value) {
+          _currentIndex = value;
+          setState(() {});
         },
         fixedColor: Colors.orangeAccent,
         type: BottomNavigationBarType.fixed,

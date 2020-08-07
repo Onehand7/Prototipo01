@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:proto01/menu/solicitud/page_solicitud.dart';
 import 'package:proto01/menu/menu_principal.dart';
 import 'package:proto01/menu/perfil/mi_perfil.dart';
-import 'package:proto01/menu/configuracion/confi.dart';
 import 'package:proto01/menuLateral/acercade.dart';
+import 'package:proto01/menuLateral/atencionCliente.dart';
+import 'package:proto01/menuLateral/confi.dart';
+import 'package:proto01/menuLateral/noticias.dart';
 
 class PageInicio extends StatefulWidget {
   final Data data;
@@ -100,6 +102,9 @@ class _PageInicio extends State<PageInicio> {
                 onTap: () {
                   //_onSelectItem(2);
                   Navigator.of(context).pop();
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (BuildContext context) =>
+                          PageNoticias(data: Data(text: "Noticias"))));
                 },
               ),
               Divider(
@@ -121,6 +126,9 @@ class _PageInicio extends State<PageInicio> {
                 onTap: () {
                   //_onSelectItem(3);
                   Navigator.of(context).pop();
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (BuildContext context) => AtencionCliente(
+                          data: Data(text: "Atencion al cliente"))));
                 },
               ),
               Divider(
@@ -143,7 +151,8 @@ class _PageInicio extends State<PageInicio> {
                   // _onSelectItem(4);
                   Navigator.of(context).pop();
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (BuildContext context) => ConfiguracionPage()));
+                      builder: (BuildContext context) => PageConfiguracion(
+                          data: Data(text: "Configuración"))));
                 },
               ),
               Divider(
