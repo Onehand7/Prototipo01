@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proto01/menu/menu_principal.dart';
+import 'package:OneHand/menu/menu_principal.dart';
 
 class AcercadeOnehand extends StatefulWidget {
   final Data data;

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:proto01/menu/chat/page_chat.dart';
-import 'package:proto01/menu/perfil/perfil.dart';
+import 'package:OneHand/menu/chat/page_chat.dart';
+import 'package:OneHand/menu/perfil/perfil.dart';
 
-import 'package:proto01/menu/solicitud/page_solicitud.dart';
-import 'package:proto01/menu/solicitud/lista_solicitud.dart';
-import 'package:proto01/menu/Inicio.dart';
-import 'package:proto01/menu/perfil/mi_perfil.dart';
+import 'package:OneHand/menu/solicitud/page_solicitud.dart';
+import 'package:OneHand/menu/solicitud/lista_solicitud.dart';
+import 'package:OneHand/menu/Inicio.dart';
+import 'package:OneHand/menu/perfil/mi_perfil.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
@@ -82,7 +82,7 @@ class _MenuPagina extends State<MenuPagina>
     switch (currentIndex) {
       case 0:
         return PageInicio(
-          data: Data(text: "OneHand7"),
+          data: Data(text: "OneHand"),
         );
       case 1:
         return ListaSolicitud(data: Data(text: "Solicitudes "));

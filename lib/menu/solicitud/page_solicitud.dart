@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proto01/menu/listaProfesionales/paga_profesionales.dart';
+import 'package:OneHand/menu/listaProfesionales/paga_profesionales.dart';
 
 class PageSolicitud extends StatefulWidget {
   @override
@@ -93,14 +93,16 @@ class _PageSolicitud extends State<PageSolicitud> {
                   child: const Text("Agregar fotos"),
                 ),
               ),
-              SizedBox(height: 50,),
+              SizedBox(
+                height: 50,
+              ),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                 child: RaisedButton(
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => PageListaProfesionales(),
-                      ));
+                    ));
                   },
                   child: const Text("Siguiente"),
                 ),

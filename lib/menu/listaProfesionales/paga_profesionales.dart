@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proto01/menu/perfil/page_perfil.dart';
+import 'package:OneHand/menu/perfil/page_perfil.dart';
 
 class PageListaProfesionales extends StatefulWidget {
   @override
@@ -29,18 +29,24 @@ class _PageListaProfesionales extends State<PageListaProfesionales> {
                         width: 352,
                         height: 72,
                         child: RaisedButton(
-                          color: Colors.white,
-                          child: ListTile(
-                            leading: Icon(Icons.account_circle, size: 40,),
-                            title: Text("Cristopher Guevara"),
-                            subtitle: Text("Técnico en computación"),
-                            trailing: Icon(Icons.more_vert,size: 30,),
-                          ),
-                          onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => PagePerfil(),
-                          ));
-                        }),
+                            color: Colors.white,
+                            child: ListTile(
+                              leading: Icon(
+                                Icons.account_circle,
+                                size: 40,
+                              ),
+                              title: Text("Cristopher Guevara"),
+                              subtitle: Text("Técnico en computación"),
+                              trailing: Icon(
+                                Icons.more_vert,
+                                size: 30,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => PagePerfil(),
+                              ));
+                            }),
                       ),
                     ],
                   ),
@@ -56,18 +62,25 @@ class _PageListaProfesionales extends State<PageListaProfesionales> {
                         width: 352,
                         height: 72,
                         child: RaisedButton(
-                          color: Colors.white,
-                          child: ListTile(
-                            leading: Icon(Icons.account_circle, size: 40,),
-                            title: Text("Felipe Cortes"),
-                            subtitle: Text("Electricista - Técnico - Mecanico"),
-                            trailing: Icon(Icons.more_vert,size: 30,),
-                          ),
-                          onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => PagePerfil(),
-                          ));
-                        }),
+                            color: Colors.white,
+                            child: ListTile(
+                              leading: Icon(
+                                Icons.account_circle,
+                                size: 40,
+                              ),
+                              title: Text("Felipe Cortes"),
+                              subtitle:
+                                  Text("Electricista - Técnico - Mecanico"),
+                              trailing: Icon(
+                                Icons.more_vert,
+                                size: 30,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => PagePerfil(),
+                              ));
+                            }),
                       ),
                     ],
                   ),
@@ -83,18 +96,24 @@ class _PageListaProfesionales extends State<PageListaProfesionales> {
                         width: 352,
                         height: 72,
                         child: RaisedButton(
-                          color: Colors.white,
-                          child: ListTile(
-                            leading: Icon(Icons.account_circle, size: 40,),
-                            title: Text("Ramón Alberto Luces"),
-                            subtitle: Text("Pintor - Técnico - Albañil"),
-                            trailing: Icon(Icons.more_vert,size: 30,),
-                          ),
-                          onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => PagePerfil(),
-                          ));
-                        }),
+                            color: Colors.white,
+                            child: ListTile(
+                              leading: Icon(
+                                Icons.account_circle,
+                                size: 40,
+                              ),
+                              title: Text("Ramón Alberto Luces"),
+                              subtitle: Text("Pintor - Técnico - Albañil"),
+                              trailing: Icon(
+                                Icons.more_vert,
+                                size: 30,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => PagePerfil(),
+                              ));
+                            }),
                       ),
                     ],
                   ),
@@ -110,18 +129,24 @@ class _PageListaProfesionales extends State<PageListaProfesionales> {
                         width: 352,
                         height: 72,
                         child: RaisedButton(
-                          color: Colors.white,
-                          child: ListTile(
-                            leading: Icon(Icons.account_circle, size: 40,),
-                            title: Text("Jose Perez"),
-                            subtitle: Text("Técnico - Carpintero"),
-                            trailing: Icon(Icons.more_vert,size: 30,),
-                          ),
-                          onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => PagePerfil(),
-                          ));
-                        }),
+                            color: Colors.white,
+                            child: ListTile(
+                              leading: Icon(
+                                Icons.account_circle,
+                                size: 40,
+                              ),
+                              title: Text("Jose Perez"),
+                              subtitle: Text("Técnico - Carpintero"),
+                              trailing: Icon(
+                                Icons.more_vert,
+                                size: 30,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => PagePerfil(),
+                              ));
+                            }),
                       ),
                     ],
                   ),
@@ -137,18 +162,24 @@ class _PageListaProfesionales extends State<PageListaProfesionales> {
                         width: 352,
                         height: 72,
                         child: RaisedButton(
-                          color: Colors.white,
-                          child: ListTile(
-                            leading: Icon(Icons.account_circle, size: 40,),
-                            title: Text("Ramón Alberto Luces"),
-                            subtitle: Text("Pintor - Técnico - Albañil"),
-                            trailing: Icon(Icons.more_vert,size: 30,),
-                          ),
-                          onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => PagePerfil(),
-                          ));
-                        }),
+                            color: Colors.white,
+                            child: ListTile(
+                              leading: Icon(
+                                Icons.account_circle,
+                                size: 40,
+                              ),
+                              title: Text("Ramón Alberto Luces"),
+                              subtitle: Text("Pintor - Técnico - Albañil"),
+                              trailing: Icon(
+                                Icons.more_vert,
+                                size: 30,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => PagePerfil(),
+                              ));
+                            }),
                       ),
                     ],
                   ),
@@ -164,18 +195,24 @@ class _PageListaProfesionales extends State<PageListaProfesionales> {
                         width: 352,
                         height: 72,
                         child: RaisedButton(
-                          color: Colors.white,
-                          child: ListTile(
-                            leading: Icon(Icons.account_circle, size: 40,),
-                            title: Text("Julio Ostty"),
-                            subtitle: Text("Técnico - Mudanzas - Pintor"),
-                            trailing: Icon(Icons.more_vert,size: 30,),
-                          ),
-                          onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => PagePerfil(),
-                          ));
-                        }),
+                            color: Colors.white,
+                            child: ListTile(
+                              leading: Icon(
+                                Icons.account_circle,
+                                size: 40,
+                              ),
+                              title: Text("Julio Ostty"),
+                              subtitle: Text("Técnico - Mudanzas - Pintor"),
+                              trailing: Icon(
+                                Icons.more_vert,
+                                size: 30,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => PagePerfil(),
+                              ));
+                            }),
                       ),
                     ],
                   ),
@@ -191,18 +228,25 @@ class _PageListaProfesionales extends State<PageListaProfesionales> {
                         width: 352,
                         height: 72,
                         child: RaisedButton(
-                          color: Colors.white,
-                          child: ListTile(
-                            leading: Icon(Icons.account_circle, size: 40,),
-                            title: Text("Oscar González"),
-                            subtitle: Text("Técnico - Plomero - Electricista"),
-                            trailing: Icon(Icons.more_vert,size: 30,),
-                          ),
-                          onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => PagePerfil(),
-                          ));
-                        }),
+                            color: Colors.white,
+                            child: ListTile(
+                              leading: Icon(
+                                Icons.account_circle,
+                                size: 40,
+                              ),
+                              title: Text("Oscar González"),
+                              subtitle:
+                                  Text("Técnico - Plomero - Electricista"),
+                              trailing: Icon(
+                                Icons.more_vert,
+                                size: 30,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => PagePerfil(),
+                              ));
+                            }),
                       ),
                     ],
                   ),
@@ -218,18 +262,25 @@ class _PageListaProfesionales extends State<PageListaProfesionales> {
                         width: 352,
                         height: 72,
                         child: RaisedButton(
-                          color: Colors.white,
-                          child: ListTile(
-                            leading: Icon(Icons.account_circle, size: 40,),
-                            title: Text("Patricio Espinoza"),
-                            subtitle: Text("Técnico - Electricista - Seguridad"),
-                            trailing: Icon(Icons.more_vert,size: 30,),
-                          ),
-                          onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => PagePerfil(),
-                          ));
-                        }),
+                            color: Colors.white,
+                            child: ListTile(
+                              leading: Icon(
+                                Icons.account_circle,
+                                size: 40,
+                              ),
+                              title: Text("Patricio Espinoza"),
+                              subtitle:
+                                  Text("Técnico - Electricista - Seguridad"),
+                              trailing: Icon(
+                                Icons.more_vert,
+                                size: 30,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => PagePerfil(),
+                              ));
+                            }),
                       ),
                     ],
                   ),
@@ -245,18 +296,24 @@ class _PageListaProfesionales extends State<PageListaProfesionales> {
                         width: 352,
                         height: 72,
                         child: RaisedButton(
-                          color: Colors.white,
-                          child: ListTile(
-                            leading: Icon(Icons.account_circle, size: 40,),
-                            title: Text("Sebastian Arenas"),
-                            subtitle: Text("Técnico en computación"),
-                            trailing: Icon(Icons.more_vert,size: 30,),
-                          ),
-                          onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => PagePerfil(),
-                          ));
-                        }),
+                            color: Colors.white,
+                            child: ListTile(
+                              leading: Icon(
+                                Icons.account_circle,
+                                size: 40,
+                              ),
+                              title: Text("Sebastian Arenas"),
+                              subtitle: Text("Técnico en computación"),
+                              trailing: Icon(
+                                Icons.more_vert,
+                                size: 30,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => PagePerfil(),
+                              ));
+                            }),
                       ),
                     ],
                   ),
@@ -272,18 +329,25 @@ class _PageListaProfesionales extends State<PageListaProfesionales> {
                         width: 352,
                         height: 72,
                         child: RaisedButton(
-                          color: Colors.white,
-                          child: ListTile(
-                            leading: Icon(Icons.account_circle, size: 40,),
-                            title: Text("Matias Tapia"),
-                            subtitle: Text("Técnico - Electricista - Seguridad"),
-                            trailing: Icon(Icons.more_vert,size: 30,),
-                          ),
-                          onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => PagePerfil(),
-                          ));
-                        }),
+                            color: Colors.white,
+                            child: ListTile(
+                              leading: Icon(
+                                Icons.account_circle,
+                                size: 40,
+                              ),
+                              title: Text("Matias Tapia"),
+                              subtitle:
+                                  Text("Técnico - Electricista - Seguridad"),
+                              trailing: Icon(
+                                Icons.more_vert,
+                                size: 30,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => PagePerfil(),
+                              ));
+                            }),
                       ),
                     ],
                   ),
@@ -299,18 +363,24 @@ class _PageListaProfesionales extends State<PageListaProfesionales> {
                         width: 352,
                         height: 72,
                         child: RaisedButton(
-                          color: Colors.white,
-                          child: ListTile(
-                            leading: Icon(Icons.account_circle, size: 40,),
-                            title: Text("Javiera Jeraldo"),
-                            subtitle: Text("Técnico - Mudanzas - Pintor"),
-                            trailing: Icon(Icons.more_vert,size: 30,),
-                          ),
-                          onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => PagePerfil(),
-                          ));
-                        }),
+                            color: Colors.white,
+                            child: ListTile(
+                              leading: Icon(
+                                Icons.account_circle,
+                                size: 40,
+                              ),
+                              title: Text("Javiera Jeraldo"),
+                              subtitle: Text("Técnico - Mudanzas - Pintor"),
+                              trailing: Icon(
+                                Icons.more_vert,
+                                size: 30,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => PagePerfil(),
+                              ));
+                            }),
                       ),
                     ],
                   ),

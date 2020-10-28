@@ -1,5 +1,5 @@
-name: proto01
-description: A new Flutter project.
+name: OneHand
+description: Professionales a tu disposicion
 
 version: 1.0.0+1
 
@@ -11,6 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^0.1.2
+  flutter_svg: ^0.19.0
 
 dev_dependencies:
   flutter_test:
@@ -22,4 +23,6 @@ flutter:
 
   assets:
     - assets/
+    - assets/icons/
+    - assets/images/
 

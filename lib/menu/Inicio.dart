@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:proto01/menu/solicitud/page_solicitud.dart';
-import 'package:proto01/menu/menu_principal.dart';
-import 'package:proto01/menu/perfil/mi_perfil.dart';
-import 'package:proto01/menuLateral/acercade.dart';
-import 'package:proto01/menuLateral/atencionCliente.dart';
-import 'package:proto01/menuLateral/confi.dart';
-import 'package:proto01/menuLateral/noticias.dart';
+import 'package:OneHand/menu/solicitud/page_solicitud.dart';
+import 'package:OneHand/menu/menu_principal.dart';
+import 'package:OneHand/menu/perfil/mi_perfil.dart';
+import 'package:OneHand/menuLateral/acercade.dart';
+import 'package:OneHand/menuLateral/atencionCliente.dart';
+import 'package:OneHand/menuLateral/confi.dart';
+import 'package:OneHand/menuLateral/noticias.dart';
 
 class PageInicio extends StatefulWidget {
   final Data data;

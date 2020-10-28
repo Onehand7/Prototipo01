@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proto01/menu/menu_principal.dart';
+import 'package:OneHand/menu/menu_principal.dart';
 
 class PageChat extends StatefulWidget {
   final Data data;
@@ -40,18 +40,32 @@ class _PageChat extends State<PageChat> {
   }
 
   ListView BuildListView(BuildContext context) {
-    final List<String> listaNombre= <String>["Sebastian Arenas","Matias Tapia", "Javiera Jeraldo", "Alan Olivares","Jose Perez","Sara Bustamante", "Julian Castro","Luis Torres","Hector Villalobos","Daniel Basulto"];
+    final List<String> listaNombre = <String>[
+      "Sebastian Arenas",
+      "Matias Tapia",
+      "Javiera Jeraldo",
+      "Alan Olivares",
+      "Jose Perez",
+      "Sara Bustamante",
+      "Julian Castro",
+      "Luis Torres",
+      "Hector Villalobos",
+      "Daniel Basulto"
+    ];
     return ListView.builder(
         padding: const EdgeInsets.all(8.0),
         itemCount: listaNombre.length,
         itemBuilder: (_, int index) {
           return Card(
             child: ListTile(
-              leading: Icon(Icons.account_circle, size: 50,),
+              leading: Icon(
+                Icons.account_circle,
+                size: 50,
+              ),
               title: Text("${listaNombre[index]}"),
               subtitle: Text("subtitle"),
               trailing:
-                  IconButton(icon: Icon(Icons.more_vert), onPressed: (){}),
+                  IconButton(icon: Icon(Icons.more_vert), onPressed: () {}),
             ),
           );
         });
