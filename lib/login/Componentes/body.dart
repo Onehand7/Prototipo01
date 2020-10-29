@@ -57,9 +57,7 @@ class Body extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return MenuPagina(
-                        mensaje: mensaje,
-                      );
+                      return SignUpScreen();
                     },
                   ),
                 );

@@ -12,6 +12,7 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     // This size provide us total height and width of our screen
+    //Este tamaño nos proporciona altura y anchura totales de nuestra pantalla
     return Background(
       child: SingleChildScrollView(
         child: Column(
