@@ -45,6 +45,8 @@ class _ListaSolicitud extends State<ListaSolicitud> {
                     child: RaisedButton(
                       color: Colors.white,
                       onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
                       child: Column(
                         children: <Widget>[
                           ListTile(

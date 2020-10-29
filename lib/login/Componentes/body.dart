@@ -6,6 +6,7 @@ import 'package:OneHand/Registro/registro.dart';
 import 'package:OneHand/menu/menu_principal.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
 import 'background.dart';
 
 class Body extends StatelessWidget {
@@ -15,6 +16,7 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String mensaje = "";
     Size size = MediaQuery.of(context).size;
     return Background(
       child: SingleChildScrollView(
@@ -40,7 +42,13 @@ class Body extends StatelessWidget {
             ),
             RoundedButton(
               text: "Iniciar Session",
-              press: () {},
+              press: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => MenuPagina(
+                    mensaje: mensaje,
+                  ),
+                ));
+              },
             ),
             SizedBox(height: size.height * 0.03),
             AlreadyHaveAnAccountCheck(
@@ -49,7 +57,9 @@ class Body extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return SignUpScreen();
+                      return MenuPagina(
+                        mensaje: mensaje,
+                      );
                     },
                   ),
                 );

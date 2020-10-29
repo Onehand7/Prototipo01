@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:OneHand/menu/chat/page_chat.dart';
 import 'package:OneHand/menu/perfil/perfil.dart';
-
 import 'package:OneHand/menu/solicitud/page_solicitud.dart';
 import 'package:OneHand/menu/solicitud/lista_solicitud.dart';
 import 'package:OneHand/menu/Inicio.dart';
@@ -48,18 +47,18 @@ class _MenuPagina extends State<MenuPagina>
   @override
   void initState() {
     super.initState();
-    getUsuarios();
+    //getUsuarios();
   }
 
-  getUsuarios() async {
-    http.Response respuesta =
-        await http.get(Uri.encodeFull("http://localhost:3000/api/usuarios"));
-    //debugPrint(respuesta.body);
-    data = json.decode(respuesta.body);
-    setState(() {
-      cuentasData = data['cuenta'];
-    });
-  }
+  // getUsuarios() async {
+  //   http.Response respuesta =
+  //       await http.get(Uri.encodeFull("http://localhost:3000/api/usuarios"));
+  //   //debugPrint(respuesta.body);
+  //   data = json.decode(respuesta.body);
+  //   setState(() {
+  //     cuentasData = data['cuenta'];
+  //   });
+  // }
 
   // _getDrawerItemWidget(int pos) {
   //   switch (pos) {

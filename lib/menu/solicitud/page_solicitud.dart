@@ -90,11 +90,16 @@ class _PageSolicitud extends State<PageSolicitud> {
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                 child: RaisedButton(
                   onPressed: () {},
-                  child: const Text("Agregar fotos"),
+                  child: Container(
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                    child: Text("Agregar foto"),
+                  ),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)),
                 ),
               ),
               SizedBox(
-                height: 50,
+                height: 10,
               ),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
@@ -104,7 +109,12 @@ class _PageSolicitud extends State<PageSolicitud> {
                       builder: (context) => PageListaProfesionales(),
                     ));
                   },
-                  child: const Text("Siguiente"),
+                  child: Container(
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                    child: Text("Continuar"),
+                  ),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)),
                 ),
               ),
             ],

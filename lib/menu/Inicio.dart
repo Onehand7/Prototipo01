@@ -46,6 +46,7 @@ class _PageInicio extends State<PageInicio> {
           titleSpacing: 80,
           backgroundColor: Colors.orangeAccent,
         ),
+        //barra lateral del menu principal
         drawer: new Drawer(
           child: new ListView(
             children: <Widget>[
@@ -207,6 +208,7 @@ class _PageInicio extends State<PageInicio> {
                 color: Colors.orange[200],
               ),
             ),
+            //Barra de busqueda en el menu principal.
             Container(
               margin: EdgeInsets.symmetric(vertical: 25),
               padding: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
