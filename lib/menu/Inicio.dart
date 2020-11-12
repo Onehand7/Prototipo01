@@ -44,7 +44,7 @@ class _PageInicio extends State<PageInicio> {
         appBar: AppBar(
           title: Text("${data2.text}"),
           titleSpacing: 80,
-          backgroundColor: Colors.orangeAccent,
+          backgroundColor: Colors.amberAccent,
         ),
         //barra lateral del menu principal
         drawer: new Drawer(
@@ -203,18 +203,18 @@ class _PageInicio extends State<PageInicio> {
         body: Stack(
           children: <Widget>[
             Container(
-              height: size.height * .30,
+              height: size.height * .35,
               decoration: BoxDecoration(
-                color: Colors.orange[200],
+                color: Color(0xFFcbedf1),
+                //borderRadius: BorderRadius.circular(30),
               ),
             ),
             //Barra de busqueda en el menu principal.
             Container(
               margin: EdgeInsets.symmetric(vertical: 25),
-              padding: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
               decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(26.5)),
+                  color: Colors.white, borderRadius: BorderRadius.circular(30)),
               child: TextField(
                 decoration: InputDecoration(
                   hintText: "Buscar",
@@ -234,7 +234,7 @@ class _PageInicio extends State<PageInicio> {
                 children: <Widget>[
                   Card(
                       elevation: 20,
-                      color: Colors.amber[600],
+                      color: Color(0xFF02efb8),
                       child: InkWell(
                         splashColor: Colors.blue.withAlpha(50),
                         onTap: () {},
@@ -262,47 +262,47 @@ class _PageInicio extends State<PageInicio> {
                       )),
                   Card(
                     elevation: 20,
-                    color: Colors.amber[500],
+                    color: Color(0xFF9afee7),
                     child: const Center(child: Text('Eléctrico')),
                   ),
                   Card(
                     elevation: 20,
-                    color: Colors.amber[100],
+                    color: Color(0xFF9afee7),
                     child: const Center(child: Text('Electromecánico')),
                   ),
                   Card(
                     elevation: 20,
-                    color: Colors.amber[600],
+                    color: Color(0xFF02efb8),
                     child: const Center(child: Text('Enfermería')),
                   ),
                   Card(
                     elevation: 20,
-                    color: Colors.amber[500],
+                    color: Color(0xFF02efb8),
                     child: const Center(child: Text('Gásfiter')),
                   ),
                   Card(
                     elevation: 20,
-                    color: Colors.amber[100],
+                    color: Color(0xFF9afee7),
                     child: const Center(child: Text('Informático')),
                   ),
                   Card(
                     elevation: 20,
-                    color: Colors.amber[600],
+                    color: Color(0xFF9afee7),
                     child: const Center(child: Text('Kinesiólogo')),
                   ),
                   Card(
                     elevation: 20,
-                    color: Colors.amber[500],
+                    color: Color(0xFF02efb8),
                     child: const Center(child: Text('Mecánico')),
                   ),
                   Card(
                     elevation: 20,
-                    color: Colors.amber[100],
+                    color: Color(0xFF02efb8),
                     child: const Center(child: Text('Pedagogía básica')),
                   ),
                   Card(
                     elevation: 20,
-                    color: Colors.amber[600],
+                    color: Color(0xFF9afee7),
                     child: const Center(child: Text('Turismo')),
                   ),
                 ],

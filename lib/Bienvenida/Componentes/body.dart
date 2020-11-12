@@ -20,7 +20,7 @@ class Body extends StatelessWidget {
           children: <Widget>[
             Text(
               "Bienvenidos a  OneHand",
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
             SizedBox(height: size.height * 0.05),
             SvgPicture.asset(
