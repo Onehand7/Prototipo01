@@ -1,3 +1,8 @@
+import 'dart:convert';
+
+import 'package:OneHand/menu/chat/conversacion.dart';
+import 'package:OneHand/models/messege_model.dart';
+import 'package:OneHand/models/user_model.dart';
 import 'package:flutter/material.dart';
 import 'package:OneHand/menu/menu_principal.dart';
 
@@ -31,8 +36,11 @@ class _PageChat extends State<PageChat> {
         titleSpacing: 100,
         backgroundColor: Colors.orangeAccent,
         actions: <Widget>[
-          IconButton(icon: Icon(Icons.more_vert), onPressed: () {})
+          IconButton(icon: Icon(Icons.search_sharp), onPressed: () {})
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.search),
       ),
       //drawer: PageDrawer(),
       body: BuildListView(context),
@@ -54,18 +62,27 @@ class _PageChat extends State<PageChat> {
     ];
     return ListView.builder(
         padding: const EdgeInsets.all(8.0),
-        itemCount: listaNombre.length,
+        itemCount: chats.length,
         itemBuilder: (_, int index) {
+          final chat = chats[index];
           return Card(
+            elevation: 15,
             child: ListTile(
               leading: Icon(
                 Icons.account_circle,
                 size: 50,
               ),
-              title: Text("${listaNombre[index]}"),
+              title: Text(chat.sender.name),
               subtitle: Text("subtitle"),
-              trailing:
-                  IconButton(icon: Icon(Icons.more_vert), onPressed: () {}),
+              trailing: Text(chat.time),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Conversacion(
+                              user: chat.sender,
+                            )));
+              },
             ),
           );
         });
