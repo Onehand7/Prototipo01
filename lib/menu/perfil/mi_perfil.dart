@@ -56,18 +56,18 @@ class _PageMiPerfil extends State<PageMiPerfil> {
             child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
-            "Matias Tapia",
+            "Sebastian Arenas",
             style: TextStyle(fontSize: 27),
           ),
         )),
         ListTile(
           title: Text("Correo electrónico"),
-          subtitle: Text("mtapia5@alumnos.ceduc.cl"),
+          subtitle: Text("seba519tatu@gmail.com"),
         ),
         Divider(),
         ListTile(
           title: Text("Número de teléfono"),
-          subtitle: Text("+569 3389 4293"),
+          subtitle: Text("+569 88336533"),
         ),
         Divider(),
         ListTile(

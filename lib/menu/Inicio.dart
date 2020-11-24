@@ -51,13 +51,13 @@ class _PageInicio extends State<PageInicio> {
           child: new ListView(
             children: <Widget>[
               new UserAccountsDrawerHeader(
-                  accountName: new Text("Matias Tapia"),
-                  accountEmail: new Text("mtapiar5@alumnos.ceduc.cl"),
+                  accountName: new Text("Sebastian Arenas"),
+                  accountEmail: new Text("seba519tatu@gmail.com"),
                   currentAccountPicture: new GestureDetector(
                     child: new CircleAvatar(
-                      backgroundColor: Colors.blue[100],
+                      backgroundColor: Colors.greenAccent,
                       child: Text(
-                        "M",
+                        "S",
                         style: TextStyle(fontSize: 40.0),
                       ),
                     ),
@@ -261,10 +261,33 @@ class _PageInicio extends State<PageInicio> {
                             )),
                       )),
                   Card(
-                    elevation: 20,
-                    color: Color(0xFF9afee7),
-                    child: const Center(child: Text('Eléctrico')),
-                  ),
+                      elevation: 20,
+                      color: Color(0xFF9afee7),
+                      child: InkWell(
+                        splashColor: Colors.blue.withAlpha(50),
+                        onTap: () {},
+                        child: Padding(
+                            padding: EdgeInsets.all(0),
+                            child: Stack(
+                              children: <Widget>[
+                                SizedBox(
+                                    height: double.infinity,
+                                    width: double.infinity,
+                                    child: Opacity(
+                                        opacity: 0,
+                                        child: RaisedButton(onPressed: () {
+                                          Navigator.of(context)
+                                              .push(MaterialPageRoute(
+                                            builder: (context) =>
+                                                PageSolicitud(),
+                                          ));
+                                        }))),
+                                Center(
+                                  child: Text("Eléctrico"),
+                                )
+                              ],
+                            )),
+                      )),
                   Card(
                     elevation: 20,
                     color: Color(0xFF9afee7),
