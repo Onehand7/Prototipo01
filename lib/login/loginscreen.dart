@@ -9,10 +9,7 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-
-
-
-  Future login()async{
-    var url = ""
+  Future login() async {
+    var url = "";
   }
 }
