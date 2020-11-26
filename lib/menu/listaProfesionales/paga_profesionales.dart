@@ -1,7 +1,9 @@
+import 'package:OneHand/Componentes_login/rounded_button.dart';
 import 'package:flutter/material.dart';
 import 'package:OneHand/menu/perfil/page_perfil.dart';
 import 'package:OneHand/models/messege_model.dart';
 import 'package:OneHand/models/user_model.dart';
+import 'package:OneHand/menu/chat/conversacion.dart';
 
 class PageListaProfesionales extends StatefulWidget {
   @override
@@ -29,6 +31,7 @@ class cuerpo extends StatelessWidget {
     return ListView.builder(
         itemCount: profesionales.length,
         itemBuilder: (_, int index) {
+          final chat = chats[index];
           final pro = profesionales[index];
           return Container(
             height: size.height * .35,
@@ -82,7 +85,21 @@ class cuerpo extends StatelessWidget {
                   children: [Icon(Icons.build), Text(pro.text)],
                 ),
                 Row(
-                  children: [Icon(Icons.brightness_auto), Text("Certificado")],
+                  children: [
+                    Icon(Icons.brightness_auto),
+                    Text("Certificado"),
+                    RaisedButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Conversacion(
+                                      user: chat.sender,
+                                    )));
+                      },
+                      child: Text("Confirmar"),
+                    )
+                  ],
                 ),
               ],
             ),

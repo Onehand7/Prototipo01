@@ -17,26 +17,6 @@ class PageInicio extends StatefulWidget {
 class _PageInicio extends State<PageInicio> {
   final Data data2;
   _PageInicio({this.data2});
-  //VARIABLES
-  // int _selectDrawerItem = 0;
-
-  // Widget _getDrawerItemWidget(int pos) {
-  //   switch (pos) {
-  //     case 1:
-  //       return PageMiPerfil();
-  //     case 4:
-  //       return ConfiguracionPage();
-  //     default:
-  //   }
-  // }
-
-  // _onSelectItem(int pos) {
-  //   Navigator.of(context).pop();
-  //   setState(() {
-  //     _selectDrawerItem = pos;
-  //   });
-  // }
-
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -200,6 +180,7 @@ class _PageInicio extends State<PageInicio> {
             ],
           ),
         ),
+        //cuerpo del menu principal
         body: Stack(
           children: <Widget>[
             Container(

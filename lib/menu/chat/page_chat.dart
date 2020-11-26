@@ -39,6 +39,7 @@ class _PageChat extends State<PageChat> {
           IconButton(icon: Icon(Icons.search_sharp), onPressed: () {})
         ],
       ),
+      // ignore: missing_required_param
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.search),
       ),
