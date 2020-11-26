@@ -23,26 +23,65 @@ final User currentUser = User(
 final User sebastian = User(id: 1, name: "Sebastian");
 final User andres = User(id: 2, name: "Andres");
 final User daniel = User(id: 3, name: "Daniel");
+final User juan = User(id: 4, name: "Juan David Perez");
+
+List<Message> profesionales = [
+  Message(
+    sender: sebastian,
+    time: "",
+    text: "Electicista, Intalaciones en general",
+    isLiked: false,
+    unread: true,
+  ),
+  Message(
+    sender: daniel,
+    time: "",
+    text: "Intalaciones electricas interior, exterior",
+    isLiked: false,
+    unread: true,
+  ),
+  Message(
+    sender: juan,
+    time: "",
+    text: "Electricista. Elestricidad general. ",
+    isLiked: false,
+    unread: true,
+  ),
+  Message(
+    sender: andres,
+    time: "",
+    text: "Electricista. Intalaciones interior y exterior",
+    isLiked: false,
+    unread: true,
+  )
+];
 
 List<Message> chats = [
   Message(
+    sender: juan,
+    time: "12:12 AM",
+    text: "Electricista. Elestricidad general.",
+    isLiked: false,
+    unread: true,
+  ),
+  Message(
     sender: sebastian,
     time: "00:30 AM",
-    text: "Hola, tengo un problema con mi computadora",
+    text: "Su problema se puede solucio...",
     isLiked: false,
     unread: true,
   ),
   Message(
     sender: andres,
     time: "14:23 PM",
-    text: "Hola buenas, digame cual es su problema",
+    text: "Si, claro",
     isLiked: false,
     unread: true,
   ),
   Message(
     sender: daniel,
     time: "5:30 PM",
-    text: "Hola, tengo un problema con mi computadora",
+    text: "Cual es su problema?",
     isLiked: false,
     unread: true,
   )

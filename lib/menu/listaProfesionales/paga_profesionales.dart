@@ -1,5 +1,9 @@
+import 'package:OneHand/Componentes_login/rounded_button.dart';
 import 'package:flutter/material.dart';
 import 'package:OneHand/menu/perfil/page_perfil.dart';
+import 'package:OneHand/models/messege_model.dart';
+import 'package:OneHand/models/user_model.dart';
+import 'package:OneHand/menu/chat/conversacion.dart';
 
 class PageListaProfesionales extends StatefulWidget {
   @override
@@ -15,7 +19,96 @@ class _PageListaProfesionales extends State<PageListaProfesionales> {
         titleSpacing: 30,
         backgroundColor: Colors.orangeAccent,
       ),
-      body: Stack(
+      body: cuerpo(),
+    );
+  }
+}
+
+class cuerpo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    return ListView.builder(
+        itemCount: profesionales.length,
+        itemBuilder: (_, int index) {
+          final chat = chats[index];
+          final pro = profesionales[index];
+          return Container(
+            height: size.height * .35,
+            width: size.width * .95,
+            padding: EdgeInsets.symmetric(),
+            margin: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              color: Colors.lightBlue[100],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Icon(
+                      Icons.account_circle,
+                      size: 70,
+                    ),
+                    Icon(
+                      Icons.star,
+                      color: Colors.yellow,
+                    ),
+                    Icon(
+                      Icons.star,
+                      color: Colors.yellow,
+                    ),
+                    Icon(
+                      Icons.star,
+                      color: Colors.yellow,
+                    ),
+                    Icon(
+                      Icons.star,
+                      color: Colors.yellow,
+                    ),
+                    Icon(
+                      Icons.star,
+                      color: Colors.yellow,
+                    ),
+                    Text("(56)")
+                  ],
+                ),
+                Divider(),
+                Row(
+                  children: [
+                    Icon(Icons.face),
+                    Text(pro.sender.name),
+                  ],
+                ),
+                Row(
+                  children: [Icon(Icons.build), Text(pro.text)],
+                ),
+                Row(
+                  children: [
+                    Icon(Icons.brightness_auto),
+                    Text("Certificado"),
+                    RaisedButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Conversacion(
+                                      user: chat.sender,
+                                    )));
+                      },
+                      child: Text("Confirmar"),
+                    )
+                  ],
+                ),
+              ],
+            ),
+          );
+        });
+  }
+}
+
+/* Stack(
         children: <Widget>[
           ListView(
             children: <Widget>[
@@ -389,7 +482,4 @@ class _PageListaProfesionales extends State<PageListaProfesionales> {
             ],
           )
         ],
-      ),
-    );
-  }
-}
+      ), */

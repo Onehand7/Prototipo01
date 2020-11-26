@@ -39,6 +39,7 @@ class _PageChat extends State<PageChat> {
           IconButton(icon: Icon(Icons.search_sharp), onPressed: () {})
         ],
       ),
+      // ignore: missing_required_param
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.search),
       ),
@@ -48,18 +49,6 @@ class _PageChat extends State<PageChat> {
   }
 
   ListView BuildListView(BuildContext context) {
-    final List<String> listaNombre = <String>[
-      "Sebastian Arenas",
-      "Matias Tapia",
-      "Javiera Jeraldo",
-      "Alan Olivares",
-      "Jose Perez",
-      "Sara Bustamante",
-      "Julian Castro",
-      "Luis Torres",
-      "Hector Villalobos",
-      "Daniel Basulto"
-    ];
     return ListView.builder(
         padding: const EdgeInsets.all(8.0),
         itemCount: chats.length,
@@ -73,7 +62,7 @@ class _PageChat extends State<PageChat> {
                 size: 50,
               ),
               title: Text(chat.sender.name),
-              subtitle: Text("subtitle"),
+              subtitle: Text(chat.text),
               trailing: Text(chat.time),
               onTap: () {
                 Navigator.push(
