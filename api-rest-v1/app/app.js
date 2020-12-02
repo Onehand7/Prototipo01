@@ -20,7 +20,7 @@ app.use(express.json())
 
 
 //rutas
-
+app.use(require('./routes/user.route'))
 
 //exportar variable app
 module.exports = app
