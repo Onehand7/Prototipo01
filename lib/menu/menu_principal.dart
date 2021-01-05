@@ -26,7 +26,7 @@ class MenuPagina extends StatefulWidget {
 
 class _MenuPagina extends State<MenuPagina>
     with SingleTickerProviderStateMixin {
-  Map data; /////////////////////////////
+  List data; /////////////////////////////
   List cuentasData;
 
   //VARIABLES
@@ -47,28 +47,17 @@ class _MenuPagina extends State<MenuPagina>
   @override
   void initState() {
     super.initState();
-    //getUsuarios();
+    getUser();
   }
 
-  // getUsuarios() async {
-  //   http.Response respuesta =
-  //       await http.get(Uri.encodeFull("http://localhost:3000/api/usuarios"));
-  //   //debugPrint(respuesta.body);
-  //   data = json.decode(respuesta.body);
-  //   setState(() {
-  //     cuentasData = data['cuenta'];
-  //   });
-  // }
-
-  // _getDrawerItemWidget(int pos) {
-  //   switch (pos) {
-  //     case 1:
-  //       return PerfilPage();
-  //     case 2:
-  //       return ConfiguracionPage();
-  //     default:
-  //   }
-  // }
+  getUser() async {
+    http.Response response = await http.get('http://192.168.1.93:3000/');
+    debugPrint(response.body);
+    data = json.decode(response.body);
+    setState(() {
+      return data;
+    });
+  }
 
   _onSelectItem(int pos) {
     Navigator.of(context).pop();
