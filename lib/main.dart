@@ -1,6 +1,5 @@
-import 'package:OneHand/Bienvenida/welcome.dart';
+import 'package:OneHand/Login_Principal/Bienvenida/welcome.dart';
 import 'package:flutter/material.dart';
-import 'Bienvenida/welcome.dart';
 
 void main() => runApp(MyApp());
 
