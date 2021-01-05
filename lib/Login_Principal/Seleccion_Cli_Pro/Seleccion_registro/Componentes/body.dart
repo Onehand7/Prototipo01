@@ -1,13 +1,12 @@
 import 'package:OneHand/Login_Principal/Bienvenida/Componentes/background.dart';
 import 'package:OneHand/Login_Principal/Componentes_login/rounded_button.dart';
 import 'package:OneHand/Login_Principal/Registro/registro.dart';
-import 'package:OneHand/Login_Principal/Seleccion_Cli_Pro/Seleccion_registro/Componentes/Select_Screen_registro.dart';
 import 'package:OneHand/Login_Principal/login/loginscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:OneHand/Login_Principal/Seleccion_Cli_Pro/Seleccion_inicio/Componentes/Select_Screen_inicio.dart';
 
-import '../../../constantes.dart';
+import '../../../../constantes.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -20,31 +19,31 @@ class Body extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Image.asset(
+              "assets/logo.png",
+              height: size.height * 0.45,
+            ),
             Text(
-              "Bienvenidos a  OneHand",
+              "¿Como deseas registrarteeeeeee?",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
             SizedBox(height: size.height * 0.05),
-            SvgPicture.asset(
-              "assets/icons/chat.svg",
-              height: size.height * 0.45,
-            ),
             SizedBox(height: size.height * 0.05),
             RoundedButton(
-              text: "Iniciar Session",
+              text: "Cliente",
               press: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return Select_Screen_inicio();
+                      return SignUpScreen();
                     },
                   ),
                 );
               },
             ),
             RoundedButton(
-              text: "Registrarse",
+              text: "Profesional",
               color: kPrimaryLightColor,
               textColor: Colors.black,
               press: () {
@@ -52,7 +51,7 @@ class Body extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return Select_Screen_registro();
+                      return SignUpScreen();
                     },
                   ),
                 );

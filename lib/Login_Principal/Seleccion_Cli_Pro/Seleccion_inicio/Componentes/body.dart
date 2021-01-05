@@ -4,9 +4,9 @@ import 'package:OneHand/Login_Principal/Registro/registro.dart';
 import 'package:OneHand/Login_Principal/login/loginscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:OneHand/Login_Principal/Seleccion_Cli_Pro/Select_Screen.dart';
+import 'package:OneHand/Login_Principal/Seleccion_Cli_Pro/Seleccion_inicio/Componentes/Select_Screen_inicio.dart';
 
-import '../../../constantes.dart';
+import '../../../../constantes.dart';
 
 class Body extends StatelessWidget {
   @override
