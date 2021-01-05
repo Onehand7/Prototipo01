@@ -19,31 +19,31 @@ class Body extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Image.asset(
+              "assets/logo.png",
+              height: size.height * 0.45,
+            ),
             Text(
-              "Bienvenidos a  OneHand",
+              "¿Como deseas iniciar?",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
             SizedBox(height: size.height * 0.05),
-            SvgPicture.asset(
-              "assets/icons/chat.svg",
-              height: size.height * 0.45,
-            ),
             SizedBox(height: size.height * 0.05),
             RoundedButton(
-              text: "Iniciar Session",
+              text: "Cliente",
               press: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return Select_Screen();
+                      return LoginScreen();
                     },
                   ),
                 );
               },
             ),
             RoundedButton(
-              text: "Registrarse",
+              text: "Profesional",
               color: kPrimaryLightColor,
               textColor: Colors.black,
               press: () {
@@ -51,7 +51,7 @@ class Body extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return Select_Screen();
+                      return LoginScreen();
                     },
                   ),
                 );
