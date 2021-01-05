@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:OneHand/Login_Principal/Seleccion_Cli_Pro/Seleccion_inicio/Componentes/body.dart';
+import 'package:OneHand/Login_Principal/Seleccion_Cli_Pro/Seleccion_registro/Componentes/body.dart';
 
 class Select_Screen_registro extends StatefulWidget {
   @override
