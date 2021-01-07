@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:OneHand/Screen_cliente/menu/solicitud/page_solicitud.dart';
-import 'package:OneHand/Screen_cliente/menu/menu_principal.dart';
-import 'package:OneHand/Screen_cliente/menu/perfil/mi_perfil.dart';
+import 'package:OneHand/Screen_profesional/Solicitudes/page_solicitud.dart';
+import 'package:OneHand/Screen_profesional/menu_principal.dart';
+import 'package:OneHand/Screen_profesional/perfil/mi_perfil.dart';
 import 'package:OneHand/menuLateral/acercade.dart';
 import 'package:OneHand/menuLateral/atencionCliente.dart';
 import 'package:OneHand/menuLateral/confi.dart';
@@ -22,7 +22,7 @@ class _PageInicio extends State<PageInicio> {
     var size = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(
-          title: Text("${data2.text}"),
+          title: Text("Menu del profesional"),
           titleSpacing: 80,
           backgroundColor: Colors.amberAccent,
         ),
@@ -60,8 +60,7 @@ class _PageInicio extends State<PageInicio> {
                   //_onSelectItem(1);
                   Navigator.of(context).pop();
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (BuildContext context) =>
-                          PageMiPerfil(data: Data(text: "Mi Perfil"))));
+                      builder: (BuildContext context) => PageMiPerfil()));
                 },
               ),
               Divider(
@@ -84,8 +83,7 @@ class _PageInicio extends State<PageInicio> {
                   //_onSelectItem(2);
                   Navigator.of(context).pop();
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (BuildContext context) =>
-                          PageNoticias(data: Data(text: "Noticias"))));
+                      builder: (BuildContext context) => PageNoticias()));
                 },
               ),
               Divider(
@@ -108,8 +106,7 @@ class _PageInicio extends State<PageInicio> {
                   //_onSelectItem(3);
                   Navigator.of(context).pop();
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (BuildContext context) => AtencionCliente(
-                          data: Data(text: "Atencion al cliente"))));
+                      builder: (BuildContext context) => AtencionCliente()));
                 },
               ),
               Divider(
@@ -132,8 +129,7 @@ class _PageInicio extends State<PageInicio> {
                   // _onSelectItem(4);
                   Navigator.of(context).pop();
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (BuildContext context) => PageConfiguracion(
-                          data: Data(text: "Configuración"))));
+                      builder: (BuildContext context) => PageConfiguracion()));
                 },
               ),
               Divider(
@@ -156,8 +152,7 @@ class _PageInicio extends State<PageInicio> {
                   //_onSelectItem(5);
                   Navigator.of(context).pop();
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (BuildContext context) => AcercadeOnehand(
-                          data: Data(text: "Acerca de Onehand"))));
+                      builder: (BuildContext context) => AcercadeOnehand()));
                 },
               ),
               Divider(
@@ -198,7 +193,7 @@ class _PageInicio extends State<PageInicio> {
                   color: Colors.white, borderRadius: BorderRadius.circular(30)),
               child: TextField(
                 decoration: InputDecoration(
-                  hintText: "Buscar",
+                  hintText: "Buscar el profesional",
                   icon: Icon(Icons.search),
                   border: InputBorder.none,
                 ),

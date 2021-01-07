@@ -3,28 +3,29 @@ import 'package:OneHand/Screen_cliente/menu/chat/page_chat.dart';
 import 'package:OneHand/Screen_cliente/menu/perfil/perfil.dart';
 import 'package:OneHand/Screen_cliente/menu/solicitud/page_solicitud.dart';
 import 'package:OneHand/Screen_cliente/menu/solicitud/lista_solicitud.dart';
-import 'package:OneHand/Screen_cliente/menu/Inicio.dart';
-import 'package:OneHand/Screen_cliente/menu/perfil/mi_perfil.dart';
+import 'package:OneHand/Screen_profesional/Inicio.dart';
+import 'package:OneHand/Screen_profesional/perfil/mi_perfil.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
 
-class MenuPagina extends StatefulWidget {
+class MenuPagina_profesional extends StatefulWidget {
   static Route<dynamic> route(String mensaje) {
     return MaterialPageRoute(
-      builder: (context) => MenuPagina(mensaje: mensaje),
+      builder: (context) => MenuPagina_profesional(mensaje: mensaje),
     );
   }
 
   final String mensaje;
 
-  const MenuPagina({Key key, @required this.mensaje}) : super(key: key);
+  const MenuPagina_profesional({Key key, @required this.mensaje})
+      : super(key: key);
 
   @override
   _MenuPagina createState() => new _MenuPagina();
 }
 
-class _MenuPagina extends State<MenuPagina>
+class _MenuPagina extends State<MenuPagina_profesional>
     with SingleTickerProviderStateMixin {
   List data; /////////////////////////////
   List cuentasData;

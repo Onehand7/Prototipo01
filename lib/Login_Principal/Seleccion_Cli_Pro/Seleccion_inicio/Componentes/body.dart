@@ -1,6 +1,8 @@
 import 'package:OneHand/Login_Principal/Bienvenida/Componentes/background.dart';
 import 'package:OneHand/Login_Principal/Componentes_login/rounded_button.dart';
 import 'package:OneHand/Login_Principal/Registro/registro.dart';
+import 'package:OneHand/Login_Principal/Screen_login/Login_Cliente/login/loginscreen.dart';
+import 'package:OneHand/Login_Principal/Screen_login/Login_Profesional/login/loginscreen.dart';
 import 'package:OneHand/Login_Principal/login/loginscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -36,7 +38,7 @@ class Body extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return LoginScreen();
+                      return LoginScreen_Cliente();
                     },
                   ),
                 );
@@ -51,7 +53,7 @@ class Body extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return LoginScreen();
+                      return LoginScreen_Profesional();
                     },
                   ),
                 );
