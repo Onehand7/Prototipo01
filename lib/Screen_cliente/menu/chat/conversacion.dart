@@ -1,3 +1,4 @@
+import 'package:OneHand/Screen_cliente/menu/Cotizacion/Screen_cotizacion.dart';
 import 'package:OneHand/models/messege_model.dart';
 import 'package:OneHand/models/user_model.dart';
 import 'package:flutter/material.dart';
@@ -73,6 +74,25 @@ class _ConversacionState extends State<Conversacion> {
       ),
       body: Column(
         children: [
+          Row(
+            children: [
+              Text("Cotización actual: 0"),
+              Text("     "),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (BuildContext context) => Screen_cotizacion()));
+                },
+                child: Text(
+                  "Solicitar cotización",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              )
+            ],
+          ),
           Expanded(
             child: Container(
               decoration: BoxDecoration(color: Colors.white),

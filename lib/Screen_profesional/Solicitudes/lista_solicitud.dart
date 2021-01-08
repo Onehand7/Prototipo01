@@ -1,5 +1,6 @@
+import 'package:OneHand/Screen_profesional/Solicitudes/Solicitud_Enviadas/Solicitud_enviadas.dart';
 import 'package:flutter/material.dart';
-import 'package:OneHand/Screen_cliente/menu/menu_principal.dart';
+import 'package:OneHand/Screen_profesional/menu_principal.dart';
 
 class ListaSolicitud extends StatefulWidget {
   final Data data;
@@ -22,7 +23,7 @@ class _ListaSolicitud extends State<ListaSolicitud> {
             ),
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => MenuPagina(
+                builder: (context) => MenuPagina_profesional(
                   mensaje: null,
                 ),
               ));
@@ -38,15 +39,20 @@ class _ListaSolicitud extends State<ListaSolicitud> {
           ListView(
             children: <Widget>[
               Card(
-                elevation: 20,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
+                margin: EdgeInsets.all(15),
+                elevation: 10,
                 child: Padding(
                   padding: const EdgeInsets.all(0.0),
                   child: SizedBox(
                     child: RaisedButton(
                       color: Colors.white,
-                      onPressed: () {},
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                Solicitud_Enviadas()));
+                      },
                       child: Column(
                         children: <Widget>[
                           ListTile(
@@ -54,9 +60,9 @@ class _ListaSolicitud extends State<ListaSolicitud> {
                               Icons.branding_watermark,
                               size: 60,
                             ),
-                            title: Text("Computación"),
+                            title: Text("Instalación electrica"),
                             subtitle: Text(
-                                "Necesito una revision para mi pc, anda..."),
+                                "Necesito realizar una instalacion electrica en mi casa"),
                             trailing: Icon(Icons.more_vert),
                           ),
                           Divider(
@@ -81,7 +87,10 @@ class _ListaSolicitud extends State<ListaSolicitud> {
                 ),
               ),
               Card(
-                elevation: 20,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
+                margin: EdgeInsets.all(15),
+                elevation: 10,
                 child: Padding(
                   padding: const EdgeInsets.all(0.0),
                   child: SizedBox(

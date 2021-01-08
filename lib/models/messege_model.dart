@@ -1,4 +1,5 @@
 import 'package:OneHand/models/user_model.dart';
+import 'package:flutter/cupertino.dart';
 
 class Message {
   final User sender;
@@ -6,6 +7,7 @@ class Message {
   final String text;
   final bool isLiked;
   final bool unread;
+  final String image;
 
   Message({
     this.sender,
@@ -13,6 +15,7 @@ class Message {
     this.text,
     this.isLiked,
     this.unread,
+    this.image,
   });
 }
 
@@ -20,40 +23,63 @@ final User currentUser = User(
   id: 0,
   name: "Current User",
 );
-final User sebastian = User(id: 1, name: "Sebastian");
-final User andres = User(id: 2, name: "Andres");
-final User daniel = User(id: 3, name: "Daniel");
-final User juan = User(id: 4, name: "Juan David Perez");
+final User sebastian = User(
+    id: 1,
+    name: "Sebastian Arenas",
+    image: Image.network(
+        "https://www.urgencias24h.net/wp-content/uploads/2019/12/electricista-urgente-24h-nou-barris-barcelona.jpg"));
+final User andres = User(
+  id: 2,
+  name: "Andres Perez",
+  // image:
+  //     "https://tecrep24.com/wp-content/uploads/2020/03/electricista-malaga.png"
+);
+final User daniel = User(
+  id: 3,
+  name: "Daniel Basulto",
+  // image:
+  //     "http://www.isaelectricistas.pe/wp-content/uploads/2016/10/Electricista-en-La-Molina-1.jpg"
+);
+final User juan = User(
+  id: 4,
+  name: "Juan David Perez",
+  // image:
+  //     "https://www.aytosanlorenzo.es/wp-content/uploads/2018/04/electricista.jpg"
+);
 
 List<Message> profesionales = [
   Message(
-    sender: sebastian,
-    time: "",
-    text: "Electicista, Intalaciones en general",
-    isLiked: false,
-    unread: true,
-  ),
+      sender: sebastian,
+      time: "",
+      text: "Electicista, Intalaciones en general",
+      isLiked: false,
+      unread: true,
+      image:
+          "https://www.urgencias24h.net/wp-content/uploads/2019/12/electricista-urgente-24h-nou-barris-barcelona.jpg"),
   Message(
-    sender: daniel,
-    time: "",
-    text: "Intalaciones electricas interior, exterior",
-    isLiked: false,
-    unread: true,
-  ),
+      sender: daniel,
+      time: "",
+      text: "Intalaciones electricas interior, exterior",
+      isLiked: false,
+      unread: true,
+      image:
+          "http://www.europlusservicios.com/imagen/Electricista-en-madrid.jpg"),
   Message(
-    sender: juan,
-    time: "",
-    text: "Electricista. Elestricidad general. ",
-    isLiked: false,
-    unread: true,
-  ),
+      sender: juan,
+      time: "",
+      text: "Electricista. Elestricidad general. ",
+      isLiked: false,
+      unread: true,
+      image:
+          "http://www.isaelectricistas.pe/wp-content/uploads/2016/10/Electricista-en-La-Molina-1.jpg"),
   Message(
-    sender: andres,
-    time: "",
-    text: "Electricista. Intalaciones interior y exterior",
-    isLiked: false,
-    unread: true,
-  )
+      sender: andres,
+      time: "",
+      text: "Electricista. Intalaciones interior y exterior",
+      isLiked: false,
+      unread: true,
+      image:
+          "https://www.aytosanlorenzo.es/wp-content/uploads/2018/04/electricista.jpg"),
 ];
 
 List<Message> chats = [

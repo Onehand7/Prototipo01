@@ -1,10 +1,10 @@
 import 'dart:convert';
 
-import 'package:OneHand/Screen_cliente/menu/chat/conversacion.dart';
+import 'package:OneHand/Screen_profesional/chat/conversacion.dart';
 import 'package:OneHand/models/messege_model.dart';
 import 'package:OneHand/models/user_model.dart';
 import 'package:flutter/material.dart';
-import 'package:OneHand/Screen_cliente/menu/menu_principal.dart';
+import 'package:OneHand/Screen_profesional/menu_principal.dart';
 
 class PageChat extends StatefulWidget {
   final Data data;
@@ -27,7 +27,7 @@ class _PageChat extends State<PageChat> {
             ),
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => MenuPagina(
+                builder: (context) => MenuPagina_profesional(
                   mensaje: null,
                 ),
               ));

@@ -1,3 +1,4 @@
+import 'package:OneHand/Screen_profesional/Cotizacion/Screen_Cotizacion.dart';
 import 'package:OneHand/models/messege_model.dart';
 import 'package:OneHand/models/user_model.dart';
 import 'package:flutter/material.dart';
@@ -67,12 +68,32 @@ class _ConversacionState extends State<Conversacion> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          widget.user.name,
+          "",
+          //widget.user.name,
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
       ),
       body: Column(
         children: [
+          Row(
+            children: [
+              Text("Cotización actual: 0"),
+              Text("     "),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (BuildContext context) => Screen_cotizacion()));
+                },
+                child: Text(
+                  "Cotizar",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              )
+            ],
+          ),
           Expanded(
             child: Container(
               decoration: BoxDecoration(color: Colors.white),

@@ -76,7 +76,7 @@ class _MenuPagina extends State<MenuPagina_profesional>
       case 1:
       //return ListaSolicitud(data: Data(text: "Solicitudes "));
       case 2:
-      //return PageChat(data: Data(text: "Chat"));
+      //PageChat(data: Data(text: "Chat"));
       case 3:
         return PageMiPerfil(
             //data: Data(text: "Mi Perfil"),
