@@ -13,7 +13,7 @@ class _PageSolicitud extends State<PageSolicitud> {
       appBar: AppBar(
         title: Text("Nueva Solicitud"),
         titleSpacing: 60,
-        backgroundColor: Colors.orangeAccent,
+        backgroundColor: Color(0xFF2df03f),
       ),
       body: Stack(
         children: <Widget>[
@@ -89,6 +89,7 @@ class _PageSolicitud extends State<PageSolicitud> {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                 child: RaisedButton(
+                  color: Color(0xFF2df03f),
                   onPressed: () {},
                   child: Container(
                     padding: EdgeInsets.symmetric(vertical: 15),

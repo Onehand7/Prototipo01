@@ -30,7 +30,7 @@ class _PageMiPerfil extends State<PageMiPerfil> {
           //se pasa el titulo de Menu principal a lista solicitud
           title: Text("${data2.text}"),
           titleSpacing: 100,
-          backgroundColor: Colors.orangeAccent,
+          backgroundColor: Color(0xFF2df03f),
         ),
         //drawer: PageDrawer(),
         body: BuildPerfil());
@@ -43,7 +43,7 @@ class _PageMiPerfil extends State<PageMiPerfil> {
         Container(
           height: size.height * .25,
           decoration: BoxDecoration(
-            color: Colors.orange[200],
+            color: Color(0xFF85ff8f),
           ),
           child: IconButton(
               icon: Icon(

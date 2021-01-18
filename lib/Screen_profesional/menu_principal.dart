@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:OneHand/Screen_cliente/menu/chat/page_chat.dart';
-import 'package:OneHand/Screen_cliente/menu/perfil/perfil.dart';
-import 'package:OneHand/Screen_cliente/menu/solicitud/page_solicitud.dart';
-import 'package:OneHand/Screen_cliente/menu/solicitud/lista_solicitud.dart';
+import 'package:OneHand/Screen_profesional/chat/page_chat.dart';
+import 'package:OneHand/Screen_profesional/perfil/perfil.dart';
+import 'package:OneHand/Screen_profesional/Solicitudes/page_solicitud.dart';
+import 'package:OneHand/Screen_profesional/Solicitudes/lista_solicitud.dart';
 import 'package:OneHand/Screen_profesional/Inicio.dart';
 import 'package:OneHand/Screen_profesional/perfil/mi_perfil.dart';
 import 'package:http/http.dart' as http;
@@ -71,16 +71,16 @@ class _MenuPagina extends State<MenuPagina_profesional>
     switch (currentIndex) {
       case 0:
         return PageInicio(
-            //data: Data(text: "OneHand"),
-            );
+          data: Data(text: "OneHand"),
+        );
       case 1:
-      //return ListaSolicitud(data: Data(text: "Solicitudes "));
+        return ListaSolicitud(data: Data(text: "Solicitudes "));
       case 2:
-      //PageChat(data: Data(text: "Chat"));
+        return PageChat(data: Data(text: "Chat"));
       case 3:
         return PageMiPerfil(
-            //data: Data(text: "Mi Perfil"),
-            );
+          data: Data(text: "Mi Perfil"),
+        );
         break;
       default:
     }
@@ -91,38 +91,39 @@ class _MenuPagina extends State<MenuPagina_profesional>
     var size = MediaQuery.of(context).size;
     return new Scaffold(
       body: BarraInferior(_currentIndex),
+
       // descomentar _get para usar barra lateral, descomentar _children para barra inferior
       //_children[_currentIndex],
       //_getDrawerItemWidget(_selectDrawerItem),
 
       //Barra de navegacion inferior
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: (value) {
-          _currentIndex = value;
-          setState(() {});
-        },
-        fixedColor: Color(0xFF02efb8),
-        type: BottomNavigationBarType.fixed,
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text("Inicio"),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.book),
-            title: Text("Solicitudes"),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.forum),
-            title: Text("Chat"),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
-            title: Text("Mi Perfil"),
-          )
-        ],
-      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   currentIndex: _currentIndex,
+      //   onTap: (value) {
+      //     _currentIndex = value;
+      //     setState(() {});
+      //   },
+      //   fixedColor: Color(0xFF2df03f),
+      //   type: BottomNavigationBarType.fixed,
+      //   items: <BottomNavigationBarItem>[
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.home),
+      //       title: Text("Inicio"),
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.book),
+      //       title: Text("Solicitudes"),
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.forum),
+      //       title: Text("Chat"),
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.account_circle),
+      //       title: Text("Mi Perfil"),
+      //     )
+      //   ],
+      // ),
     );
   }
 

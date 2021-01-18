@@ -11,7 +11,9 @@ class _Solicitud_EnviadasState extends State<Solicitud_Enviadas> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Color(0xFF4cd262),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.of(context).push(MaterialPageRoute(
@@ -27,7 +29,7 @@ class _Solicitud_EnviadasState extends State<Solicitud_Enviadas> {
               Container(
                 height: size.height * .35,
                 decoration: BoxDecoration(
-                  color: Color(0xFFcbedf1),
+                  color: Color(0xFF85ff8f),
                   //borderRadius: BorderRadius.circular(30),
                 ),
                 child: Center(

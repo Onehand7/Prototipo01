@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:OneHand/Screen_cliente/menu/menu_principal.dart';
+import 'package:OneHand/Screen_profesional/menu_principal.dart';
 
 class PageMiPerfil extends StatefulWidget {
   final Data data;
@@ -13,6 +13,7 @@ class _PageMiPerfil extends State<PageMiPerfil> {
   _PageMiPerfil({this.data2});
   @override
   Widget build(BuildContext context) {
+    String mensaje = "S";
     return Scaffold(
         appBar: AppBar(
           leading: IconButton(
@@ -22,8 +23,8 @@ class _PageMiPerfil extends State<PageMiPerfil> {
               ),
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => MenuPagina(
-                    mensaje: null,
+                  builder: (context) => MenuPagina_profesional(
+                    mensaje: mensaje,
                   ),
                 ));
               }),

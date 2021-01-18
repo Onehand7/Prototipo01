@@ -67,6 +67,7 @@ class _ConversacionState extends State<Conversacion> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xFF2df03f),
         title: Text(
           widget.user.name,
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),

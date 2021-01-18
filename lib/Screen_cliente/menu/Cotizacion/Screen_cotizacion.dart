@@ -1,4 +1,5 @@
 import 'package:OneHand/Login_Principal/Componentes_login/rounded_button.dart';
+import 'package:OneHand/Screen_cliente/menu/menu_principal.dart';
 import 'package:flutter/material.dart';
 
 class Screen_cotizacion extends StatefulWidget {
@@ -9,8 +10,11 @@ class Screen_cotizacion extends StatefulWidget {
 class _Screen_cotizacionState extends State<Screen_cotizacion> {
   @override
   Widget build(BuildContext context) {
+    String mensaje = "";
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Color(0xFF85ff8f),
+      ),
       body: Stack(
         children: [
           Column(
@@ -28,7 +32,21 @@ class _Screen_cotizacionState extends State<Screen_cotizacion> {
                       Text("Aun no te envian una cotizacion"),
                       RoundedButton(
                         text: "Solicitar cotización",
-                        press: () {},
+                        press: () {
+                          showDialog(
+                              context: context,
+                              builder: (context) => AlertDialog(
+                                      title: Text("Cotización Solicitada"),
+                                      content: Text(
+                                          "Otros profesionales están listo para enviarte una cotización"),
+                                      actions: [
+                                        FlatButton(
+                                            onPressed: () {
+                                              Navigator.of(context).pop();
+                                            },
+                                            child: Text("Volver")),
+                                      ]));
+                        },
                       )
                     ],
                   )),
@@ -49,7 +67,26 @@ class _Screen_cotizacionState extends State<Screen_cotizacion> {
                       ),
                       RoundedButton(
                         text: "Cerrar cotización",
-                        press: () {},
+                        press: () {
+                          showDialog(
+                              context: context,
+                              builder: (context) => AlertDialog(
+                                      title: Text("Cotización cerrada"),
+                                      content: Text(
+                                          "Estas indicando que estas cerrando la solicitud a los demas profesionales"),
+                                      actions: [
+                                        FlatButton(
+                                            onPressed: () {
+                                              Navigator.of(context)
+                                                  .push(MaterialPageRoute(
+                                                builder: (context) =>
+                                                    MenuPagina(
+                                                        mensaje: mensaje),
+                                              ));
+                                            },
+                                            child: Text("Volver")),
+                                      ]));
+                        },
                       )
                     ],
                   )),

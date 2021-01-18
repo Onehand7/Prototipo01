@@ -9,7 +9,9 @@ class _Screen_cotizacionState extends State<Screen_cotizacion> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Color(0xFF4cd262),
+      ),
       body: Stack(
         children: <Widget>[
           Container(
@@ -25,50 +27,50 @@ class _Screen_cotizacionState extends State<Screen_cotizacion> {
               ),
             ),
           ),
-          Positioned(
-            //top: 10,
-            child: GridView.count(
-              crossAxisCount: 3,
-              children: [
-                Card(
-                  child: Center(child: Text("1")),
-                ),
-                Card(
-                  child: Center(child: Text("2")),
-                ),
-                Card(
-                  child: Center(child: Text("3")),
-                ),
-                Card(
-                  child: Center(child: Text("4")),
-                ),
-                Card(
-                  child: Center(child: Text("5")),
-                ),
-                Card(
-                  child: Center(child: Text("6")),
-                ),
-                Card(
-                  child: Center(child: Text("7")),
-                ),
-                Card(
-                  child: Center(child: Text("8")),
-                ),
-                Card(
-                  child: Center(child: Text("9")),
-                ),
-                Card(
-                  child: Center(child: Text(",")),
-                ),
-                Card(
-                  child: Center(child: Text("0")),
-                ),
-                Card(
-                  child: Center(child: Icon(Icons.arrow_back_outlined)),
-                ),
-              ],
-            ),
-          ),
+          // Positioned(
+          //   //top: 10,
+          //   child: GridView.count(
+          //     crossAxisCount: 3,
+          //     children: [
+          //       Card(
+          //         child: Center(child: Text("1")),
+          //       ),
+          //       Card(
+          //         child: Center(child: Text("2")),
+          //       ),
+          //       Card(
+          //         child: Center(child: Text("3")),
+          //       ),
+          //       Card(
+          //         child: Center(child: Text("4")),
+          //       ),
+          //       Card(
+          //         child: Center(child: Text("5")),
+          //       ),
+          //       Card(
+          //         child: Center(child: Text("6")),
+          //       ),
+          //       Card(
+          //         child: Center(child: Text("7")),
+          //       ),
+          //       Card(
+          //         child: Center(child: Text("8")),
+          //       ),
+          //       Card(
+          //         child: Center(child: Text("9")),
+          //       ),
+          //       Card(
+          //         child: Center(child: Text(",")),
+          //       ),
+          //       Card(
+          //         child: Center(child: Text("0")),
+          //       ),
+          //       Card(
+          //         child: Center(child: Icon(Icons.arrow_back_outlined)),
+          //       ),
+          //     ],
+          //   ),
+          // ),
         ],
         overflow: Overflow.visible,
       ),

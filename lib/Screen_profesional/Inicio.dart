@@ -25,7 +25,7 @@ class _PageInicio extends State<PageInicio> {
         appBar: AppBar(
           title: Text("Menu del profesional"),
           titleSpacing: 80,
-          backgroundColor: Colors.amberAccent,
+          backgroundColor: Color(0xFF2df03f),
         ),
         //barra lateral del menu principal
         drawer: new Drawer(
@@ -182,7 +182,7 @@ class _PageInicio extends State<PageInicio> {
             Container(
               height: size.height * .35,
               decoration: BoxDecoration(
-                color: Color(0xFFcbedf1),
+                color: Color(0xFF4cd262),
                 //borderRadius: BorderRadius.circular(30),
               ),
             ),

@@ -13,7 +13,7 @@ class _PageSolicitud extends State<PageSolicitud> {
       appBar: AppBar(
         title: Text("Nueva Solicitud"),
         titleSpacing: 60,
-        backgroundColor: Colors.orangeAccent,
+        backgroundColor: Color(0xFF4cd262),
       ),
       body: Stack(
         children: <Widget>[

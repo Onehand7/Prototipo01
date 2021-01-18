@@ -101,7 +101,7 @@ class _MenuPagina extends State<MenuPagina>
           _currentIndex = value;
           setState(() {});
         },
-        fixedColor: Color(0xFF02efb8),
+        fixedColor: Color(0xFF00db14),
         type: BottomNavigationBarType.fixed,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(

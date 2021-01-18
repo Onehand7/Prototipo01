@@ -24,7 +24,7 @@ class _PageInicio extends State<PageInicio> {
         appBar: AppBar(
           title: Text("${data2.text}"),
           titleSpacing: 80,
-          backgroundColor: Colors.amberAccent,
+          backgroundColor: Color(0xFF00db14),
         ),
         //barra lateral del menu principal
         drawer: new Drawer(
@@ -186,7 +186,7 @@ class _PageInicio extends State<PageInicio> {
             Container(
               height: size.height * .35,
               decoration: BoxDecoration(
-                color: Color(0xFFcbedf1),
+                color: Color(0xFF4cd262),
                 //borderRadius: BorderRadius.circular(30),
               ),
             ),
@@ -215,7 +215,7 @@ class _PageInicio extends State<PageInicio> {
                 children: <Widget>[
                   Card(
                       elevation: 20,
-                      color: Color(0xFF02efb8),
+                      color: Color(0xFF2df03f),
                       child: InkWell(
                         splashColor: Colors.blue.withAlpha(50),
                         onTap: () {},
@@ -243,7 +243,7 @@ class _PageInicio extends State<PageInicio> {
                       )),
                   Card(
                       elevation: 20,
-                      color: Color(0xFF9afee7),
+                      color: Color(0xFF85ff8f),
                       child: InkWell(
                         splashColor: Colors.blue.withAlpha(50),
                         onTap: () {},
@@ -271,42 +271,42 @@ class _PageInicio extends State<PageInicio> {
                       )),
                   Card(
                     elevation: 20,
-                    color: Color(0xFF9afee7),
+                    color: Color(0xFF85ff8f),
                     child: const Center(child: Text('Electromecánico')),
                   ),
                   Card(
                     elevation: 20,
-                    color: Color(0xFF02efb8),
+                    color: Color(0xFF2df03f),
                     child: const Center(child: Text('Enfermería')),
                   ),
                   Card(
                     elevation: 20,
-                    color: Color(0xFF02efb8),
+                    color: Color(0xFF2df03f),
                     child: const Center(child: Text('Gásfiter')),
                   ),
                   Card(
                     elevation: 20,
-                    color: Color(0xFF9afee7),
+                    color: Color(0xFF85ff8f),
                     child: const Center(child: Text('Informático')),
                   ),
                   Card(
                     elevation: 20,
-                    color: Color(0xFF9afee7),
+                    color: Color(0xFF85ff8f),
                     child: const Center(child: Text('Kinesiólogo')),
                   ),
                   Card(
                     elevation: 20,
-                    color: Color(0xFF02efb8),
+                    color: Color(0xFF2df03f),
                     child: const Center(child: Text('Mecánico')),
                   ),
                   Card(
                     elevation: 20,
-                    color: Color(0xFF02efb8),
+                    color: Color(0xFF2df03f),
                     child: const Center(child: Text('Pedagogía básica')),
                   ),
                   Card(
                     elevation: 20,
-                    color: Color(0xFF9afee7),
+                    color: Color(0xFF85ff8f),
                     child: const Center(child: Text('Turismo')),
                   ),
                 ],

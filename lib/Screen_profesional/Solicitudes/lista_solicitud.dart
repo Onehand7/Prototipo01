@@ -31,7 +31,7 @@ class _ListaSolicitud extends State<ListaSolicitud> {
         //se pasa el titulo de Menu principal a lista solicitud
         title: Text("${data2.text}"),
         titleSpacing: 100,
-        backgroundColor: Colors.orangeAccent,
+        backgroundColor: Color(0xFF4cd262),
       ),
       //drawer: PageDrawer(),
       body: Stack(

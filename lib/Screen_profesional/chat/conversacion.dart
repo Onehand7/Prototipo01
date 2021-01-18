@@ -67,6 +67,7 @@ class _ConversacionState extends State<Conversacion> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xFF4cd262),
         title: Text(
           "",
           //widget.user.name,
@@ -77,21 +78,21 @@ class _ConversacionState extends State<Conversacion> {
         children: [
           Row(
             children: [
-              Text("Cotización actual: 0"),
-              Text("     "),
-              GestureDetector(
-                onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (BuildContext context) => Screen_cotizacion()));
-                },
-                child: Text(
-                  "Cotizar",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              )
+              // Text("Cotización actual: 0"),
+              // Text("     "),
+              // GestureDetector(
+              //   onTap: () {
+              //     Navigator.of(context).push(MaterialPageRoute(
+              //         builder: (BuildContext context) => Screen_cotizacion()));
+              //   },
+              //   child: Text(
+              //     "Cotizar",
+              //     style: TextStyle(
+              //       color: Colors.black,
+              //       fontWeight: FontWeight.bold,
+              //     ),
+              //   ),
+              // )
             ],
           ),
           Expanded(

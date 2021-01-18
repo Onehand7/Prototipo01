@@ -34,7 +34,7 @@ class _PageChat extends State<PageChat> {
             }),
         title: Text("${data2.text}"),
         titleSpacing: 100,
-        backgroundColor: Colors.orangeAccent,
+        backgroundColor: Color(0xFF4cd262),
         actions: <Widget>[
           IconButton(icon: Icon(Icons.search_sharp), onPressed: () {})
         ],

@@ -19,7 +19,7 @@ class _PageListaProfesionales extends State<PageListaProfesionales> {
       appBar: AppBar(
         title: Text("Lista de profesionales"),
         titleSpacing: 30,
-        backgroundColor: Colors.orangeAccent,
+        backgroundColor: Color(0xFF2df03f),
       ),
       body: cuerpo(),
     );
@@ -86,6 +86,7 @@ class cuerpo extends StatelessWidget {
                               ),
                               Text("(56)"),
                               FlatButton(
+                                  color: Color(0xFF2df03f),
                                   onPressed: () => {
                                         showDialog(
                                             context: context,
@@ -113,7 +114,8 @@ class cuerpo extends StatelessWidget {
                                                                         mensaje),
                                                           ));
                                                         },
-                                                        child: Text("Cerrar"))
+                                                        child:
+                                                            Text("Finalizar"))
                                                   ],
                                                 ))
                                       },
