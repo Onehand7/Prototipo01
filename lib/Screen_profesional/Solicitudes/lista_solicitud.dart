@@ -1,3 +1,4 @@
+import 'package:OneHand/Login_Principal/Componentes_login/rounded_button.dart';
 import 'package:OneHand/Screen_profesional/Solicitudes/Solicitud_Enviadas/Solicitud_enviadas.dart';
 import 'package:flutter/material.dart';
 import 'package:OneHand/Screen_profesional/menu_principal.dart';
@@ -98,7 +99,56 @@ class _ListaSolicitud extends State<ListaSolicitud> {
                     //height: ,
                     child: RaisedButton(
                       color: Colors.white,
-                      onPressed: () {},
+                      onPressed: () {
+                        showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                                  elevation: 20,
+                                  title: Text("El cliente cerro el servicio"),
+                                  content: Container(
+                                    height: 200,
+                                    child: Center(
+                                      child: Column(
+                                        children: [
+                                          Text(
+                                              "Con motivos infirmativos ¿Cuanto cobraste por el servicio?"),
+                                          TextField(
+                                            keyboardType: TextInputType.number,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  actions: [
+                                    FlatButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                          // showDialog(
+                                          //     context: context,
+                                          //     builder: (context) => AlertDialog(
+                                          //           title: Text(
+                                          //               "Gracias por compartir esta informacion con nosotros"),
+                                          //           content: Container(
+                                          //             height: 100,
+                                          //             child: Center(
+                                          //               child: Column(
+                                          //                 children: [
+                                          //                   Icon(
+                                          //                     Icons.thumb_up,
+                                          //                     size: 100,
+                                          //                   )
+                                          //                 ],
+                                          //               ),
+                                          //             ),
+                                          //           ),
+                                          //         ));
+                                        },
+                                        child: Text("Continuar")),
+                                    FlatButton(
+                                        onPressed: () {}, child: Text("Omitir"))
+                                  ],
+                                ));
+                      },
                       child: Column(
                         children: <Widget>[
                           ListTile(
@@ -109,7 +159,10 @@ class _ListaSolicitud extends State<ListaSolicitud> {
                             title: Text("Gásfiter"),
                             subtitle: Text(
                                 "Tengo una fuga en mi califont, es urge..."),
-                            trailing: Icon(Icons.more_vert),
+                            trailing: Icon(
+                              Icons.circle_notifications,
+                              color: Colors.red,
+                            ),
                           ),
                           Divider(
                             height: 10,
@@ -122,7 +175,7 @@ class _ListaSolicitud extends State<ListaSolicitud> {
                               Text("Estado:"),
                               Text(
                                 "Finalizado",
-                                style: TextStyle(color: Colors.green),
+                                style: TextStyle(color: Colors.blueGrey),
                               )
                             ],
                           )

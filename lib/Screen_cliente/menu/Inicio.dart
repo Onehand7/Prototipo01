@@ -270,45 +270,229 @@ class _PageInicio extends State<PageInicio> {
                             )),
                       )),
                   Card(
-                    elevation: 20,
-                    color: Color(0xFF85ff8f),
-                    child: const Center(child: Text('Electromecánico')),
-                  ),
+                      elevation: 20,
+                      color: Color(0xFF85ff8f),
+                      child: InkWell(
+                        splashColor: Colors.blue.withAlpha(50),
+                        onTap: () {},
+                        child: Padding(
+                            padding: EdgeInsets.all(0),
+                            child: Stack(
+                              children: <Widget>[
+                                SizedBox(
+                                    height: double.infinity,
+                                    width: double.infinity,
+                                    child: Opacity(
+                                        opacity: 0,
+                                        child: RaisedButton(onPressed: () {
+                                          Navigator.of(context)
+                                              .push(MaterialPageRoute(
+                                            builder: (context) =>
+                                                PageSolicitud(),
+                                          ));
+                                        }))),
+                                Center(
+                                  child: Text("Electromecánico"),
+                                )
+                              ],
+                            )),
+                      )),
                   Card(
-                    elevation: 20,
-                    color: Color(0xFF2df03f),
-                    child: const Center(child: Text('Enfermería')),
-                  ),
+                      elevation: 20,
+                      color: Color(0xFF2df03f),
+                      child: InkWell(
+                        splashColor: Colors.blue.withAlpha(50),
+                        onTap: () {},
+                        child: Padding(
+                            padding: EdgeInsets.all(0),
+                            child: Stack(
+                              children: <Widget>[
+                                SizedBox(
+                                    height: double.infinity,
+                                    width: double.infinity,
+                                    child: Opacity(
+                                        opacity: 0,
+                                        child: RaisedButton(onPressed: () {
+                                          Navigator.of(context)
+                                              .push(MaterialPageRoute(
+                                            builder: (context) =>
+                                                PageSolicitud(),
+                                          ));
+                                        }))),
+                                Center(
+                                  child: Text("Enfermería"),
+                                )
+                              ],
+                            )),
+                      )),
                   Card(
-                    elevation: 20,
-                    color: Color(0xFF2df03f),
-                    child: const Center(child: Text('Gásfiter')),
-                  ),
+                      elevation: 20,
+                      color: Color(0xFF2df03f),
+                      child: InkWell(
+                        splashColor: Colors.blue.withAlpha(50),
+                        onTap: () {},
+                        child: Padding(
+                            padding: EdgeInsets.all(0),
+                            child: Stack(
+                              children: <Widget>[
+                                SizedBox(
+                                    height: double.infinity,
+                                    width: double.infinity,
+                                    child: Opacity(
+                                        opacity: 0,
+                                        child: RaisedButton(onPressed: () {
+                                          Navigator.of(context)
+                                              .push(MaterialPageRoute(
+                                            builder: (context) =>
+                                                PageSolicitud(),
+                                          ));
+                                        }))),
+                                Center(
+                                  child: Text("Gásfiter"),
+                                )
+                              ],
+                            )),
+                      )),
                   Card(
-                    elevation: 20,
-                    color: Color(0xFF85ff8f),
-                    child: const Center(child: Text('Informático')),
-                  ),
+                      elevation: 20,
+                      color: Color(0xFF85ff8f),
+                      child: InkWell(
+                        splashColor: Colors.blue.withAlpha(50),
+                        onTap: () {},
+                        child: Padding(
+                            padding: EdgeInsets.all(0),
+                            child: Stack(
+                              children: <Widget>[
+                                SizedBox(
+                                    height: double.infinity,
+                                    width: double.infinity,
+                                    child: Opacity(
+                                        opacity: 0,
+                                        child: RaisedButton(onPressed: () {
+                                          Navigator.of(context)
+                                              .push(MaterialPageRoute(
+                                            builder: (context) =>
+                                                PageSolicitud(),
+                                          ));
+                                        }))),
+                                Center(
+                                  child: Text("Informática"),
+                                )
+                              ],
+                            )),
+                      )),
                   Card(
-                    elevation: 20,
-                    color: Color(0xFF85ff8f),
-                    child: const Center(child: Text('Kinesiólogo')),
-                  ),
+                      elevation: 20,
+                      color: Color(0xFF85ff8f),
+                      child: InkWell(
+                        splashColor: Colors.blue.withAlpha(50),
+                        onTap: () {},
+                        child: Padding(
+                            padding: EdgeInsets.all(0),
+                            child: Stack(
+                              children: <Widget>[
+                                SizedBox(
+                                    height: double.infinity,
+                                    width: double.infinity,
+                                    child: Opacity(
+                                        opacity: 0,
+                                        child: RaisedButton(onPressed: () {
+                                          Navigator.of(context)
+                                              .push(MaterialPageRoute(
+                                            builder: (context) =>
+                                                PageSolicitud(),
+                                          ));
+                                        }))),
+                                Center(
+                                  child: Text("Kinesiólogo"),
+                                )
+                              ],
+                            )),
+                      )),
                   Card(
-                    elevation: 20,
-                    color: Color(0xFF2df03f),
-                    child: const Center(child: Text('Mecánico')),
-                  ),
+                      elevation: 20,
+                      color: Color(0xFF2df03f),
+                      child: InkWell(
+                        splashColor: Colors.blue.withAlpha(50),
+                        onTap: () {},
+                        child: Padding(
+                            padding: EdgeInsets.all(0),
+                            child: Stack(
+                              children: <Widget>[
+                                SizedBox(
+                                    height: double.infinity,
+                                    width: double.infinity,
+                                    child: Opacity(
+                                        opacity: 0,
+                                        child: RaisedButton(onPressed: () {
+                                          Navigator.of(context)
+                                              .push(MaterialPageRoute(
+                                            builder: (context) =>
+                                                PageSolicitud(),
+                                          ));
+                                        }))),
+                                Center(
+                                  child: Text("Mecánico"),
+                                )
+                              ],
+                            )),
+                      )),
                   Card(
-                    elevation: 20,
-                    color: Color(0xFF2df03f),
-                    child: const Center(child: Text('Pedagogía básica')),
-                  ),
+                      elevation: 20,
+                      color: Color(0xFF2df03f),
+                      child: InkWell(
+                        splashColor: Colors.blue.withAlpha(50),
+                        onTap: () {},
+                        child: Padding(
+                            padding: EdgeInsets.all(0),
+                            child: Stack(
+                              children: <Widget>[
+                                SizedBox(
+                                    height: double.infinity,
+                                    width: double.infinity,
+                                    child: Opacity(
+                                        opacity: 0,
+                                        child: RaisedButton(onPressed: () {
+                                          Navigator.of(context)
+                                              .push(MaterialPageRoute(
+                                            builder: (context) =>
+                                                PageSolicitud(),
+                                          ));
+                                        }))),
+                                Center(
+                                  child: Text("Pedagogía básica"),
+                                )
+                              ],
+                            )),
+                      )),
                   Card(
-                    elevation: 20,
-                    color: Color(0xFF85ff8f),
-                    child: const Center(child: Text('Turismo')),
-                  ),
+                      elevation: 20,
+                      color: Color(0xFF85ff8f),
+                      child: InkWell(
+                        splashColor: Colors.blue.withAlpha(50),
+                        onTap: () {},
+                        child: Padding(
+                            padding: EdgeInsets.all(0),
+                            child: Stack(
+                              children: <Widget>[
+                                SizedBox(
+                                    height: double.infinity,
+                                    width: double.infinity,
+                                    child: Opacity(
+                                        opacity: 0,
+                                        child: RaisedButton(onPressed: () {
+                                          Navigator.of(context)
+                                              .push(MaterialPageRoute(
+                                            builder: (context) =>
+                                                PageSolicitud(),
+                                          ));
+                                        }))),
+                                Center(
+                                  child: Text("Turismo"),
+                                )
+                              ],
+                            )),
+                      )),
                 ],
               ),
             ),

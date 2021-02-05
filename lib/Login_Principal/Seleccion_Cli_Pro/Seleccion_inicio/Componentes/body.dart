@@ -26,7 +26,7 @@ class Body extends StatelessWidget {
               height: size.height * 0.45,
             ),
             Text(
-              "¿Como deseas iniciarse?",
+              "¿Como deseas iniciar?",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
             SizedBox(height: size.height * 0.05),

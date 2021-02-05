@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "179605965648",
+    "firebase_url": "https://apponehand.firebaseio.com",
+    "project_id": "apponehand",
+    "storage_bucket": "apponehand.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:179605965648:android:c3feabc9c7117043b63a55",
+        "android_client_info": {
+          "package_name": "com.example.app_onehand"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "179605965648-0ec547bkf29mqeess41jomst76s4t618.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.app_onehand",
+            "certificate_hash": "f79c3b8b2c4feaff29660b92093a666c8df21737"
+          }
+        },
+        {
+          "client_id": "179605965648-ti3ltti652hkcuoh3qbd72q8gf7co2v0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCR5lqPLuFG3rf9P7XWUBLctPgsigMkLj4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "179605965648-ti3ltti652hkcuoh3qbd72q8gf7co2v0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

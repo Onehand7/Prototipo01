@@ -31,7 +31,7 @@ class Body extends StatelessWidget {
             ),
             SizedBox(height: size.height * 0.05),
             RoundedButton(
-              text: "Iniciar Session",
+              text: " Iniciar sesión ",
               press: () {
                 Navigator.push(
                   context,
@@ -52,7 +52,7 @@ class Body extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return Select_Screen_registro();
+                      return SignUpScreen();
                     },
                   ),
                 );

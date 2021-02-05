@@ -21,7 +21,7 @@ class Body extends StatelessWidget {
           children: <Widget>[
             Text(
               "Registro",
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
             ),
             SizedBox(height: size.height * 0.03),
             /*SvgPicture.asset(

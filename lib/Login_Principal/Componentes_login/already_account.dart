@@ -23,7 +23,7 @@ class AlreadyHaveAnAccountCheck extends StatelessWidget {
         GestureDetector(
           onTap: press,
           child: Text(
-            login ? "Registrar" : "Iniciar Session",
+            login ? "Registrar" : " Iniciar sesión ",
             style: TextStyle(
               color: kPrimaryColor,
               fontWeight: FontWeight.bold,

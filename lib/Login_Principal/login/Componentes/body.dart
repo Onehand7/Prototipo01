@@ -41,7 +41,7 @@ class Body extends StatelessWidget {
               onChanged: (value) {},
             ),
             RoundedButton(
-              text: "Iniciar Session",
+              text: " Iniciar sesión ",
               press: () {
                 Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => MenuPagina(
