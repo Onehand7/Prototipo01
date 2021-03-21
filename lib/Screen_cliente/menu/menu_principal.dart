@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:OneHand/Screen_cliente/menu/chat/page_chat.dart';
-import 'package:OneHand/Screen_cliente/menu/perfil/perfil.dart';
-import 'package:OneHand/Screen_cliente/menu/solicitud/page_solicitud.dart';
 import 'package:OneHand/Screen_cliente/menu/solicitud/lista_solicitud.dart';
 import 'package:OneHand/Screen_cliente/menu/Inicio.dart';
 import 'package:OneHand/Screen_cliente/menu/perfil/mi_perfil.dart';
 import 'package:http/http.dart' as http;
-import 'dart:async';
 import 'dart:convert';
 
 class MenuPagina extends StatefulWidget {
@@ -106,20 +103,16 @@ class _MenuPagina extends State<MenuPagina>
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            title: Text("Inicio"),
+            label: "Inicio",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.book),
-            title: Text("Solicitudes"),
+            label: "Solicitudes",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.forum),
-            title: Text("Chat"),
+            label: "Chat",
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
-            title: Text("Mi Perfil"),
-          )
         ],
       ),
     );

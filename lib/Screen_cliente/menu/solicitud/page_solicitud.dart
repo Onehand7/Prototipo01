@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:OneHand/Screen_cliente/menu/listaProfesionales/paga_profesionales.dart';
+import 'package:OneHand/constantes.dart';
 
 class PageSolicitud extends StatefulWidget {
   @override
@@ -13,7 +14,7 @@ class _PageSolicitud extends State<PageSolicitud> {
       appBar: AppBar(
         title: Text("Nueva Solicitud"),
         titleSpacing: 60,
-        backgroundColor: Color(0xFF2df03f),
+        backgroundColor: kPrimaryColor,
       ),
       body: Stack(
         children: <Widget>[
