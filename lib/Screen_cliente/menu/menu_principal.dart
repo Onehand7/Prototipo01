@@ -63,7 +63,7 @@ class _MenuPagina extends State<MenuPagina>
     });
   }
 
-  Widget BarraInferior(int currentIndex) {
+  Widget barraInferior(int currentIndex) {
     switch (currentIndex) {
       case 0:
         return PageInicio(
@@ -86,7 +86,7 @@ class _MenuPagina extends State<MenuPagina>
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return new Scaffold(
-      body: BarraInferior(_currentIndex),
+      body: barraInferior(_currentIndex),
       // descomentar _get para usar barra lateral, descomentar _children para barra inferior
       //_children[_currentIndex],
       //_getDrawerItemWidget(_selectDrawerItem),

@@ -1,15 +1,20 @@
 import 'package:OneHand/constantes.dart';
+import 'package:OneHand/pages/screen_Menu_Principal.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
   static String id = "login_screen";
+  final String user;
+
+  LoginScreen(this.user);
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
 
 class _LoginScreenState extends State<LoginScreen> {
   bool selectLogin = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,6 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     onTap: () {
                       setState(() {
                         selectLogin = false;
+                        print(widget.user);
                       });
                     },
                     child: Text(
@@ -60,7 +66,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ],
               ),
-              (selectLogin) ? _columnSignUp(context) : _columnLogin(context),
+              (selectLogin)
+                  ? _columnSignUp(context)
+                  : _columnLogin(context, widget.user),
             ],
           ),
         ),
@@ -96,15 +104,58 @@ Widget _textFieldPassword() {
   );
 }
 
-Widget _buttonSignUp() {
+Widget _buttonSignUp(BuildContext context) {
   return _buttonGeneral(
-    labelText: "Registrame",
+    labelText: "Registrate",
+    onPressed: () => {
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => ScreenMenuPrincipal("")))
+    },
   );
 }
 
-Widget _buttonLogin() {
-  return _buttonGeneral(
-    labelText: "Entrar",
+Widget _buttonLogin(BuildContext context, String user) {
+  return ElevatedButton(
+    style: ButtonStyle(
+      elevation: MaterialStateProperty.all(10),
+      backgroundColor: MaterialStateProperty.all(
+        Colors.blue,
+      ),
+      padding: MaterialStateProperty.all(
+        EdgeInsets.symmetric(
+          horizontal: 110,
+          vertical: 15.0,
+        ),
+      ),
+      shape: MaterialStateProperty.all(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+      ),
+    ),
+    child: Text(
+      "Entrar",
+      style: TextStyle(
+        color: Colors.white,
+        fontWeight: FontWeight.w700,
+        fontSize: 20.0,
+      ),
+    ),
+    onPressed: () {
+      if (user == "Cliente") {
+        print(user);
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => ScreenMenuPrincipal(user)));
+      } else {
+        if (user == "Técnico") {
+          print(user);
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => ScreenMenuPrincipal(user)));
+        }
+      }
+    },
   );
 }
 
@@ -126,12 +177,12 @@ Widget _columnSignUp(BuildContext context) {
       SizedBox(
         height: 30.0,
       ),
-      _buttonSignUp(),
+      _buttonSignUp(context),
     ],
   );
 }
 
-Widget _columnLogin(BuildContext context) {
+Widget _columnLogin(BuildContext context, String user) {
   return Column(
     children: [
       SizedBox(
@@ -153,7 +204,7 @@ Widget _columnLogin(BuildContext context) {
       SizedBox(
         height: 65.0,
       ),
-      _buttonLogin(),
+      _buttonLogin(context, user),
     ],
   );
 }
@@ -192,6 +243,7 @@ class _textFieldGeneral extends StatelessWidget {
   }
 }
 
+// ignore: camel_case_types
 class _buttonGeneral extends StatelessWidget {
   final String labelText;
   final Function onPressed;
@@ -199,7 +251,7 @@ class _buttonGeneral extends StatelessWidget {
   const _buttonGeneral({this.labelText, this.onPressed});
   @override
   Widget build(BuildContext context) {
-    return TextButton(
+    return ElevatedButton(
       style: ButtonStyle(
         elevation: MaterialStateProperty.all(10),
         backgroundColor: MaterialStateProperty.all(

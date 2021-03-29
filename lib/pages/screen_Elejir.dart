@@ -76,6 +76,7 @@ class _ScreensElejirState extends State<ScreensElejir> {
   }
 
   Widget _iconsButtonCli() {
+    String _cli = "Cliente";
     return ClipOval(
       child: Container(
         width: 150,
@@ -89,8 +90,9 @@ class _ScreensElejirState extends State<ScreensElejir> {
           padding: EdgeInsets.all(0.0),
           child: null,
           onPressed: () {
+            print(_cli);
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => LoginScreen()));
+                MaterialPageRoute(builder: (context) => LoginScreen(_cli)));
           },
         ),
       ),
@@ -98,6 +100,7 @@ class _ScreensElejirState extends State<ScreensElejir> {
   }
 
   Widget _iconsButtonPro() {
+    String _tec = "Técnico";
     return ClipOval(
       child: Container(
         width: 150,
@@ -111,8 +114,9 @@ class _ScreensElejirState extends State<ScreensElejir> {
           padding: EdgeInsets.all(0.0),
           child: null,
           onPressed: () {
+            print(_tec);
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => LoginScreen()));
+                MaterialPageRoute(builder: (context) => LoginScreen(_tec)));
           },
         ),
       ),

@@ -1,5 +1,7 @@
 import 'package:OneHand/Login_Principal/Bienvenida/welcome.dart';
+import 'package:OneHand/pages/login_screen.dart';
 import 'package:OneHand/pages/screen_Elejir.dart';
+import 'package:OneHand/pages/screen_Menu_Principal.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -17,7 +19,6 @@ class MyApp extends StatelessWidget {
       initialRoute: ScreensElejir.id,
       routes: {
         ScreensElejir.id: (context) => ScreensElejir(),
-        //LoginScreen.id : (context) => LoginScreen(),
       },
     );
   }
