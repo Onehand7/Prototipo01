@@ -38,7 +38,7 @@ class _PageInicio extends State<PageInicio> {
               gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  colors: <Color>[Colors.blueAccent[100], Colors.blue])),
+                  colors: const <Color>[Colors.blueAccent, Colors.blue])),
         ),
         actions: [
           IconButton(
