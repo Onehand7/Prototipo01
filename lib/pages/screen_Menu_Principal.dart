@@ -2,6 +2,7 @@ import 'package:OneHand/constantes.dart';
 import 'package:OneHand/pages/screen_NewSolicitud.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:OneHand/Screen_cliente/menu/Inicio.dart';
 
 // ignore: must_be_immutable
 class ScreenMenuPrincipal extends StatefulWidget {
@@ -23,7 +24,7 @@ class _ScreenMenuPrincipalState extends State<ScreenMenuPrincipal> {
           centerTitle: true,
           backgroundColor: colorBlue,
         ),
-        drawer: Drawer(),
+        drawer: NewDrawer(),
         body: (widget.user) == "Cliente"
             ? _menuCliente(context)
             : _menuTecnico(context),
