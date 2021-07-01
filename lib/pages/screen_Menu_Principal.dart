@@ -13,6 +13,8 @@ class ScreenMenuPrincipal extends StatefulWidget {
 }
 
 class _ScreenMenuPrincipalState extends State<ScreenMenuPrincipal> {
+  int _page = 0;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -25,15 +27,42 @@ class _ScreenMenuPrincipalState extends State<ScreenMenuPrincipal> {
         ),
         drawer: Drawer(),
         body: (widget.user) == "Cliente"
-            ? _menuCliente(context)
+            ? _menuCliente(context, widget.user)
             : _menuTecnico(context),
-        bottomNavigationBar: _curvedNavigationBar(),
+        bottomNavigationBar: CurvedNavigationBar(
+          index: 1,
+          items: [
+            Icon(
+              Icons.book,
+              size: 33.0,
+            ),
+            Icon(
+              Icons.home,
+              size: 33.0,
+            ),
+            Icon(
+              Icons.forum,
+              size: 33.0,
+            ),
+          ],
+          color: Colors.white,
+          buttonBackgroundColor: Colors.white,
+          backgroundColor: colorBlue,
+          animationCurve: Curves.easeInOut,
+          animationDuration: Duration(milliseconds: 600),
+          onTap: (int index) {
+            setState(() {
+              _page = index;
+              (_page) == 0 ? _listSolicitud(context) : _listSolicitud(context);
+            });
+          },
+        ),
       ),
     );
   }
 }
 
-Widget _menuCliente(BuildContext context) {
+Widget _menuCliente(BuildContext context, String user) {
   var size = MediaQuery.of(context).size;
   return Stack(
     children: <Widget>[
@@ -55,24 +84,25 @@ Widget _menuCliente(BuildContext context) {
           crossAxisCount: 2,
           children: <Widget>[
             _buttonServicios(
-                "Baby Sister", AssetImage("assets/icono_babySister.jpg")),
+                "Baby Sister", AssetImage("assets/icono_babySister.jpg"), user),
             _buttonServicios(
-                "Eléctrico", AssetImage("assets/icono_electrico.png")),
+                "Eléctrico", AssetImage("assets/icono_electrico.png"), user),
             _buttonServicios("Electromecánico",
-                AssetImage("assets/icono_electromecanico.png")),
+                AssetImage("assets/icono_electromecanico.png"), user),
             _buttonServicios(
-                "Enfermería", AssetImage("assets/icono_enfermera.png")),
+                "Enfermería", AssetImage("assets/icono_enfermera.png"), user),
             _buttonServicios(
-                "Gásfiter", AssetImage("assets/icono_plomero.png")),
+                "Gásfiter", AssetImage("assets/icono_plomero.png"), user),
+            _buttonServicios("Informática",
+                AssetImage("assets/icono_informatica.png"), user),
+            _buttonServicios("Kinesiólogo",
+                AssetImage("assets/icono_kinesiologo.jpg"), user),
             _buttonServicios(
-                "Informática", AssetImage("assets/icono_informatica.png")),
+                "Mecánico", AssetImage("assets/icono_mecanica.png"), user),
+            _buttonServicios("Pedagogía básica",
+                AssetImage("assets/icono_pedagogia.png"), user),
             _buttonServicios(
-                "Kinesiólogo", AssetImage("assets/icono_kinesiologo.jpg")),
-            _buttonServicios(
-                "Mecánico", AssetImage("assets/icono_mecanica.png")),
-            _buttonServicios(
-                "Pedagogía básica", AssetImage("assets/icono_pedagogia.png")),
-            _buttonServicios("Turismo", AssetImage("assets/icono_turismo.png")),
+                "Turismo", AssetImage("assets/icono_turismo.png"), user),
           ],
         ),
       ),
@@ -116,9 +146,9 @@ Widget _menuTecnico(BuildContext context) {
   );
 }
 
-Widget _curvedNavigationBar() {
+Widget _curvedNavigationBar(int _page) {
   return CurvedNavigationBar(
-    index: 0,
+    index: 1,
     height: 60.0,
     items: <Widget>[
       Icon(
@@ -139,6 +169,31 @@ Widget _curvedNavigationBar() {
     backgroundColor: colorBlue,
     animationCurve: Curves.easeInOut,
     animationDuration: Duration(milliseconds: 600),
+  );
+}
+
+// ignore: unused_element
+Widget _listSolicitud(BuildContext context) {
+  var size = MediaQuery.of(context).size;
+  return Stack(
+    children: [
+      Container(
+        height: size.height,
+        decoration: BoxDecoration(color: colorBlue),
+      ),
+      ListView(
+        children: [
+          _buttonListSolicitud(
+              Text("Arreglo de cañeria"),
+              Text("Tengo mala la cañeria de mi baño. aiuda"),
+              Icon(Icons.photo_camera)),
+          _buttonListSolicitud(
+              Text("Reparación de pc"),
+              Text("Necesito que se pueda reparar mi computadora"),
+              Icon(Icons.photo_camera))
+        ],
+      )
+    ],
   );
 }
 
@@ -179,7 +234,9 @@ class _buttonSelectTecnico extends StatelessWidget {
 class _buttonServicios extends StatelessWidget {
   final String label;
   final AssetImage iconosService;
-  _buttonServicios(this.label, this.iconosService);
+  final String user;
+
+  _buttonServicios(this.label, this.iconosService, this.user);
 
   @override
   Widget build(BuildContext context) {
@@ -199,52 +256,52 @@ class _buttonServicios extends StatelessWidget {
             switch (label) {
               case "Baby Sister":
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ScreenNewSolicitud(label),
+                  builder: (context) => ScreenNewSolicitud(label, user),
                 ));
                 break;
               case "Eléctrico":
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ScreenNewSolicitud(label),
+                  builder: (context) => ScreenNewSolicitud(label, user),
                 ));
                 break;
               case "Electromecánico":
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ScreenNewSolicitud(label),
+                  builder: (context) => ScreenNewSolicitud(label, user),
                 ));
                 break;
               case "Enfermería":
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ScreenNewSolicitud(label),
+                  builder: (context) => ScreenNewSolicitud(label, user),
                 ));
                 break;
               case "Gásfiter":
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ScreenNewSolicitud(label),
+                  builder: (context) => ScreenNewSolicitud(label, user),
                 ));
                 break;
               case "Informática":
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ScreenNewSolicitud(label),
+                  builder: (context) => ScreenNewSolicitud(label, user),
                 ));
                 break;
               case "Kinesiólogo":
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ScreenNewSolicitud(label),
+                  builder: (context) => ScreenNewSolicitud(label, user),
                 ));
                 break;
               case "Mecánico":
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ScreenNewSolicitud(label),
+                  builder: (context) => ScreenNewSolicitud(label, user),
                 ));
                 break;
               case "Pedagogía básica":
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ScreenNewSolicitud(label),
+                  builder: (context) => ScreenNewSolicitud(label, user),
                 ));
                 break;
               case "Turismo":
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ScreenNewSolicitud(label),
+                  builder: (context) => ScreenNewSolicitud(label, user),
                 ));
                 break;
 
@@ -252,6 +309,32 @@ class _buttonServicios extends StatelessWidget {
             }
           },
         ),
+      ),
+    );
+  }
+}
+
+class _buttonListSolicitud extends StatelessWidget {
+  final Text label, subtitle;
+  final Icon icon;
+
+  _buttonListSolicitud(this.label, this.subtitle, this.icon);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      margin: EdgeInsets.all(10),
+      elevation: 5,
+      child: Column(
+        children: [
+          ListTile(
+            contentPadding: EdgeInsets.fromLTRB(15, 10, 25, 0),
+            title: label,
+            subtitle: subtitle,
+            trailing: icon,
+          )
+        ],
       ),
     );
   }

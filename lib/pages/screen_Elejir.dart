@@ -76,7 +76,9 @@ class _ScreensElejirState extends State<ScreensElejir> {
   }
 
   Widget _iconsButtonCli() {
+    //Variables
     String _cli = "Cliente";
+
     return ClipOval(
       child: Container(
         width: 150,
@@ -91,6 +93,7 @@ class _ScreensElejirState extends State<ScreensElejir> {
           child: null,
           onPressed: () {
             print(_cli);
+            //Navegación a LoginScreen pestaña que permite registrar y iniciar sesión
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => LoginScreen(_cli)));
           },
@@ -100,6 +103,7 @@ class _ScreensElejirState extends State<ScreensElejir> {
   }
 
   Widget _iconsButtonPro() {
+    //Variables
     String _tec = "Técnico";
     return ClipOval(
       child: Container(
@@ -115,6 +119,7 @@ class _ScreensElejirState extends State<ScreensElejir> {
           child: null,
           onPressed: () {
             print(_tec);
+            //Navegación a LoginScreen pestaña que permite registrar y iniciar sesión
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => LoginScreen(_tec)));
           },

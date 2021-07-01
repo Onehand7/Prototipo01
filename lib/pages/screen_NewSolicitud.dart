@@ -1,11 +1,13 @@
 import 'package:OneHand/constantes.dart';
 import 'package:flutter/material.dart';
+import 'package:OneHand/pages/screen_ListPro.dart';
 import 'package:OneHand/components/buttonGeneral.dart';
 
 // ignore: must_be_immutable
 class ScreenNewSolicitud extends StatefulWidget {
-  String name;
-  ScreenNewSolicitud(this.name);
+  static String id = "Screen_Newsolicitud";
+  String name, user;
+  ScreenNewSolicitud(this.name, this.user);
 
   @override
   _ScreenNewSolicitudState createState() => _ScreenNewSolicitudState();
@@ -16,6 +18,7 @@ class _ScreenNewSolicitudState extends State<ScreenNewSolicitud> {
   void initState() {
     super.initState();
     print(widget.name);
+    print(widget.user);
   }
 
   @override
@@ -96,7 +99,13 @@ class _ScreenNewSolicitudState extends State<ScreenNewSolicitud> {
               ButtonGeneral(
                 labelText: "Siguiente",
                 color: colorBlue,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ListaProfesionales(widget.user),
+                      ));
+                },
               ),
             ],
           )

@@ -67,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
               (selectLogin)
-                  ? _columnSignUp(context)
+                  ? _columnSignUp(context, widget.user)
                   : _columnLogin(context, widget.user),
             ],
           ),
@@ -80,7 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
 Widget _textFieldName() {
   return _textFieldGeneral(
     labelText: "nombre",
-    hinText: "Eduardo Garcia",
+    //hinText: "Eduardo Garcia",
     icon: Icons.person_outline,
     onChanged: (value) {},
   );
@@ -104,12 +104,23 @@ Widget _textFieldPassword() {
   );
 }
 
-Widget _buttonSignUp(BuildContext context) {
+Widget _buttonSignUp(BuildContext context, String user) {
   return _buttonGeneral(
     labelText: "Registrate",
-    onPressed: () => {
-      Navigator.push(context,
-          MaterialPageRoute(builder: (context) => ScreenMenuPrincipal("")))
+    onPressed: () {
+      if (user == "Cliente") {
+        print(user);
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => ScreenMenuPrincipal(user)));
+      } else {
+        if (user == "Técnico") {
+          print(user);
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => ScreenMenuPrincipal(user)));
+        }
+      }
     },
   );
 }
@@ -159,7 +170,7 @@ Widget _buttonLogin(BuildContext context, String user) {
   );
 }
 
-Widget _columnSignUp(BuildContext context) {
+Widget _columnSignUp(BuildContext context, String user) {
   return Column(
     children: [
       SizedBox(
@@ -177,7 +188,7 @@ Widget _columnSignUp(BuildContext context) {
       SizedBox(
         height: 30.0,
       ),
-      _buttonSignUp(context),
+      _buttonSignUp(context, user),
     ],
   );
 }
