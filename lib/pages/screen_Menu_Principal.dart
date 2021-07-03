@@ -14,7 +14,23 @@ class ScreenMenuPrincipal extends StatefulWidget {
 }
 
 class _ScreenMenuPrincipalState extends State<ScreenMenuPrincipal> {
-  int _page = 0;
+  int pageIndex = 1;
+  Widget _showPage;
+  Widget _pageCurveNavigationBar(int page) {
+    switch (page) {
+      case 0:
+        return _listSolicitudes(context);
+        break;
+      case 1:
+        return (widget.user) == "Cliente"
+            ? _menuCliente(context, widget.user)
+            : _menuTecnico(context);
+        break;
+      case 2:
+        break;
+      default:
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +43,7 @@ class _ScreenMenuPrincipalState extends State<ScreenMenuPrincipal> {
           backgroundColor: colorBlue,
         ),
         drawer: NewDrawer(),
-        body: (widget.user) == "Cliente"
-            ? _menuCliente(context, widget.user)
-            : _menuTecnico(context),
+        body: _showPage,
         bottomNavigationBar: CurvedNavigationBar(
           index: 1,
           items: [
@@ -51,10 +65,10 @@ class _ScreenMenuPrincipalState extends State<ScreenMenuPrincipal> {
           backgroundColor: colorBlue,
           animationCurve: Curves.easeInOut,
           animationDuration: Duration(milliseconds: 600),
-          onTap: (int index) {
+          onTap: (int tappedIndex) {
             setState(() {
-              _page = index;
-              (_page) == 0 ? _listSolicitud(context) : _listSolicitud(context);
+              pageIndex = tappedIndex;
+              _showPage = _pageCurveNavigationBar(tappedIndex);
             });
           },
         ),
@@ -174,7 +188,7 @@ Widget _curvedNavigationBar(int _page) {
 }
 
 // ignore: unused_element
-Widget _listSolicitud(BuildContext context) {
+Widget _listSolicitudes(BuildContext context) {
   var size = MediaQuery.of(context).size;
   return Stack(
     children: [
