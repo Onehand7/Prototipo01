@@ -15,8 +15,8 @@ class ScreenMenuPrincipal extends StatefulWidget {
 
 class _ScreenMenuPrincipalState extends State<ScreenMenuPrincipal> {
   int pageIndex = 1;
-  Widget _showPage;
-  Widget _pageCurveNavigationBar(int page) {
+
+  _pageCurveNavigationBar(int page) {
     switch (page) {
       case 0:
         return _listSolicitudes(context);
@@ -27,6 +27,7 @@ class _ScreenMenuPrincipalState extends State<ScreenMenuPrincipal> {
             : _menuTecnico(context);
         break;
       case 2:
+        return _listChat(context);
         break;
       default:
     }
@@ -43,7 +44,7 @@ class _ScreenMenuPrincipalState extends State<ScreenMenuPrincipal> {
           backgroundColor: colorBlue,
         ),
         drawer: NewDrawer(),
-        body: _showPage,
+        body: _pageCurveNavigationBar(pageIndex),
         bottomNavigationBar: CurvedNavigationBar(
           index: 1,
           items: [
@@ -65,10 +66,10 @@ class _ScreenMenuPrincipalState extends State<ScreenMenuPrincipal> {
           backgroundColor: colorBlue,
           animationCurve: Curves.easeInOut,
           animationDuration: Duration(milliseconds: 600),
-          onTap: (int tappedIndex) {
+          onTap: (tappedIndex) {
             setState(() {
               pageIndex = tappedIndex;
-              _showPage = _pageCurveNavigationBar(tappedIndex);
+              //_pageCurveNavigationBar(pageIndex);
             });
           },
         ),
@@ -161,33 +162,6 @@ Widget _menuTecnico(BuildContext context) {
   );
 }
 
-Widget _curvedNavigationBar(int _page) {
-  return CurvedNavigationBar(
-    index: 1,
-    height: 60.0,
-    items: <Widget>[
-      Icon(
-        Icons.book,
-        size: 33.0,
-      ),
-      Icon(
-        Icons.home,
-        size: 33.0,
-      ),
-      Icon(
-        Icons.forum,
-        size: 33.0,
-      ),
-    ],
-    color: Colors.white,
-    buttonBackgroundColor: Colors.white,
-    backgroundColor: colorBlue,
-    animationCurve: Curves.easeInOut,
-    animationDuration: Duration(milliseconds: 600),
-  );
-}
-
-// ignore: unused_element
 Widget _listSolicitudes(BuildContext context) {
   var size = MediaQuery.of(context).size;
   return Stack(
@@ -206,6 +180,35 @@ Widget _listSolicitudes(BuildContext context) {
               Text("Reparación de pc"),
               Text("Necesito que se pueda reparar mi computadora"),
               Icon(Icons.photo_camera))
+        ],
+      )
+    ],
+  );
+}
+
+Widget _listChat(BuildContext context) {
+  var size = MediaQuery.of(context).size;
+  return Stack(
+    children: [
+      Container(
+        height: size.height,
+        decoration: BoxDecoration(
+          color: colorBlue,
+          //borderRadius: BorderRadius.circular(30),
+        ),
+      ),
+      ListView(
+        children: [
+          _buttonListChat(
+              Icon(Icons.account_circle_outlined),
+              Text("Jose Perez Villalobos"),
+              Text("oka, Gracias!"),
+              Text("10-06-2021")),
+          _buttonListChat(
+              Icon(Icons.account_circle_outlined),
+              Text("Andrea Rojas Monje"),
+              Text("Necesito el arreglo ahorita"),
+              Text("02-07-2021"))
         ],
       )
     ],
@@ -329,6 +332,7 @@ class _buttonServicios extends StatelessWidget {
   }
 }
 
+// ignore: camel_case_types
 class _buttonListSolicitud extends StatelessWidget {
   final Text label, subtitle;
   final Icon icon;
@@ -348,6 +352,34 @@ class _buttonListSolicitud extends StatelessWidget {
             title: label,
             subtitle: subtitle,
             trailing: icon,
+          )
+        ],
+      ),
+    );
+  }
+}
+
+// ignore: camel_case_types
+class _buttonListChat extends StatelessWidget {
+  final Icon icon;
+  final Text label, subtitle, fecha;
+
+  _buttonListChat(this.icon, this.label, this.subtitle, this.fecha);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      margin: EdgeInsets.all(10),
+      elevation: 5,
+      child: Column(
+        children: [
+          ListTile(
+            contentPadding: EdgeInsets.fromLTRB(15, 10, 25, 0),
+            leading: icon,
+            title: label,
+            subtitle: subtitle,
+            trailing: fecha,
           )
         ],
       ),
