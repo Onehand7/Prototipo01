@@ -1,8 +1,9 @@
+import 'package:OneHand/components/buttonGeneral.dart';
+import 'package:OneHand/components/drawer.dart';
 import 'package:OneHand/constantes.dart';
 import 'package:OneHand/pages/screen_NewSolicitud.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:OneHand/Screen_cliente/menu/Inicio.dart';
 
 // ignore: must_be_immutable
 class ScreenMenuPrincipal extends StatefulWidget {
@@ -208,7 +209,7 @@ Widget _listChat(BuildContext context) {
               Icon(Icons.account_circle_outlined),
               Text("Andrea Rojas Monje"),
               Text("Necesito el arreglo ahorita"),
-              Text("02-07-2021"))
+              Text("02-07-2021")),
         ],
       )
     ],

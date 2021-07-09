@@ -3,7 +3,7 @@ import 'package:OneHand/Screen_cliente/menu/menu_principal.dart';
 
 class AcercadeOnehand extends StatefulWidget {
   final Data data;
-  AcercadeOnehand({this.data});
+  AcercadeOnehand(String s, {this.data});
   @override
   _AcercadeOnehand createState() => new _AcercadeOnehand(data2: data);
 }

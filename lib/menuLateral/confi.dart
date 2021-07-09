@@ -3,7 +3,7 @@ import 'package:OneHand/Screen_cliente/menu/menu_principal.dart';
 
 class PageConfiguracion extends StatefulWidget {
   final Data data;
-  PageConfiguracion({this.data});
+  PageConfiguracion(String s, {this.data});
   @override
   _PageConfiguracion createState() => new _PageConfiguracion(data2: data);
 }

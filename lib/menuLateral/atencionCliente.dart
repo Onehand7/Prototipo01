@@ -3,7 +3,7 @@ import 'package:OneHand/Screen_cliente/menu/menu_principal.dart';
 
 class AtencionCliente extends StatefulWidget {
   final Data data;
-  AtencionCliente({this.data});
+  AtencionCliente(String s, {this.data});
   @override
   _AtencionCliente createState() => new _AtencionCliente(data2: data);
 }
