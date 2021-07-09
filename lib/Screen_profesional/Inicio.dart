@@ -84,7 +84,7 @@ class _PageInicio extends State<PageInicio> {
                   //_onSelectItem(2);
                   Navigator.of(context).pop();
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (BuildContext context) => PageNoticias()));
+                      builder: (BuildContext context) => PageNoticias("")));
                 },
               ),
               Divider(

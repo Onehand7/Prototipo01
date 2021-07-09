@@ -3,7 +3,7 @@ import 'package:OneHand/Screen_cliente/menu/menu_principal.dart';
 
 class PageNoticias extends StatefulWidget {
   final Data data;
-  PageNoticias({this.data});
+  PageNoticias(String s, {this.data});
   @override
   _PageNoticias createState() => new _PageNoticias(data2: data);
 }

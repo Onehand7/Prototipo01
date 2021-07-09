@@ -153,8 +153,7 @@ class NewDrawer extends StatelessWidget {
               //_onSelectItem(2);
               Navigator.of(context).pop();
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) =>
-                      PageNoticias(data: Data(text: "Noticias"))));
+                  builder: (BuildContext context) => PageNoticias("")));
             },
           ),
           Divider(
